@@ -1,0 +1,159 @@
+---
+// Calculadora section - ITA Contadores
+---
+
+<section id="calculadora" class="w-full bg-bg py-20 px-6 lg:px-20">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block text-verde text-xs font-heading font-bold tracking-[0.15em] uppercase mb-3">
+        Herramienta gratuita
+      </span>
+      <h2 class="text-azul text-[32px] md:text-[38px] font-heading font-bold italic leading-tight">
+        ¿Cuánto pagarías de impuestos?
+      </h2>
+    </div>
+
+    <!-- Card -->
+    <div class="bg-white border border-border rounded-2xl overflow-hidden flex flex-col lg:flex-row">
+
+      <!-- Left side -->
+      <div class="flex-1 p-8 lg:p-12 flex flex-col justify-center">
+        <span class="inline-block text-verde text-xs font-heading font-bold tracking-[0.15em] uppercase mb-3">
+          Calculadora fiscal
+        </span>
+        <h3 class="text-azul text-2xl md:text-[28px] font-heading font-bold leading-tight mb-4">
+          Estima tus impuestos en segundos
+        </h3>
+        <p class="text-gris text-[15px] font-body leading-relaxed mb-8 max-w-md">
+          Ingresa tus datos básicos y obtén un estimado de cuánto deberías pagar de impuestos según tu régimen fiscal. Conoce tu situación antes de tomar decisiones.
+        </p>
+        <a
+          href="#calculadora-form"
+          class="inline-flex items-center self-start bg-amarillo text-azul font-heading font-semibold text-sm rounded-xl px-8 py-4 hover:bg-amarillo/90 transition-colors"
+        >
+          Calcular ahora
+        </a>
+      </div>
+
+      <!-- Right side: Form card -->
+      <div class="w-full lg:w-[340px] bg-bg p-6 lg:p-8 flex flex-col gap-5 border-t lg:border-t-0 lg:border-l border-border">
+
+        <h4 class="text-azul text-lg font-heading font-bold" id="calculadora-form">
+          Calculadora fiscal estimada
+        </h4>
+
+        <form id="calc-form" class="flex flex-col gap-4">
+          <!-- Ingresos mensuales -->
+          <div class="flex flex-col gap-1.5">
+            <label for="ingresos" class="text-gris text-[13px] font-body font-medium">
+              Ingresos mensuales
+            </label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gris-light text-sm">$</span>
+              <input
+                type="number"
+                id="ingresos"
+                name="ingresos"
+                placeholder="0.00"
+                min="0"
+                class="w-full bg-white border border-border rounded-lg pl-7 pr-4 py-3 text-sm text-azul font-body placeholder:text-gris-light/60 focus:outline-none focus:ring-2 focus:ring-verde/30 focus:border-verde transition-colors"
+              />
+            </div>
+          </div>
+
+          <!-- Régimen fiscal -->
+          <div class="flex flex-col gap-1.5">
+            <label for="regimen" class="text-gris text-[13px] font-body font-medium">
+              Régimen fiscal
+            </label>
+            <select
+              id="regimen"
+              name="regimen"
+              class="w-full bg-white border border-border rounded-lg px-4 py-3 text-sm text-azul font-body focus:outline-none focus:ring-2 focus:ring-verde/30 focus:border-verde transition-colors appearance-none"
+            >
+              <option value="" disabled selected>Selecciona tu régimen</option>
+              <option value="fisica">Persona Física</option>
+              <option value="moral">Persona Moral</option>
+              <option value="resico">RESICO</option>
+              <option value="arrendamiento">Arrendamiento</option>
+              <option value="actividad_empresarial">Actividad Empresarial</option>
+            </select>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            class="w-full bg-azul text-white font-heading font-semibold text-sm rounded-lg px-6 py-3 hover:bg-azul-light transition-colors mt-1 cursor-pointer"
+          >
+            Calcular &rarr;
+          </button>
+        </form>
+
+        <!-- Result -->
+        <div id="calc-result" class="hidden bg-white border border-verde/30 rounded-lg p-4">
+          <p class="text-gris text-[13px] font-body mb-1">Impuesto estimado mensual:</p>
+          <p id="calc-amount" class="text-azul text-2xl font-heading font-bold"></p>
+          <p class="text-gris-light text-[11px] font-body mt-2">
+            *Estimación simplificada. Consulta a un experto para un cálculo exacto.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('calc-form') as HTMLFormElement;
+  const resultDiv = document.getElementById('calc-result') as HTMLDivElement;
+  const amountEl = document.getElementById('calc-amount') as HTMLParagraphElement;
+
+  form?.addEventListener('submit', (e: Event) => {
+    e.preventDefault();
+
+    const ingresos = parseFloat((document.getElementById('ingresos') as HTMLInputElement).value) || 0;
+    const regimen = (document.getElementById('regimen') as HTMLSelectElement).value;
+
+    if (ingresos <= 0 || !regimen) return;
+
+    let tasa = 0;
+
+    switch (regimen) {
+      case 'fisica':
+        // Simplified progressive rate
+        if (ingresos <= 7735) tasa = 0.0192;
+        else if (ingresos <= 21321) tasa = 0.0640;
+        else if (ingresos <= 42537) tasa = 0.1088;
+        else if (ingresos <= 83333) tasa = 0.16;
+        else tasa = 0.2136;
+        break;
+      case 'moral':
+        tasa = 0.30;
+        break;
+      case 'resico':
+        if (ingresos <= 25000) tasa = 0.01;
+        else if (ingresos <= 50000) tasa = 0.011;
+        else if (ingresos <= 83333) tasa = 0.015;
+        else tasa = 0.02;
+        break;
+      case 'arrendamiento':
+        tasa = 0.35 * 0.30; // 35% deducción ciega, ISR sobre el resto
+        break;
+      case 'actividad_empresarial':
+        if (ingresos <= 42537) tasa = 0.1088;
+        else if (ingresos <= 83333) tasa = 0.16;
+        else tasa = 0.2136;
+        break;
+      default:
+        tasa = 0.15;
+    }
+
+    const impuesto = ingresos * tasa;
+
+    amountEl.textContent = `$${impuesto.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MXN`;
+    resultDiv.classList.remove('hidden');
+  });
+</script>

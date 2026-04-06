@@ -1,0 +1,33 @@
+---
+// StatsBar.astro – ITA Contadores stats bar
+const stats = [
+  { value: "17+", label: "Años de experiencia", green: false },
+  { value: "20+", label: "Clientes activos", green: false },
+  { value: "<24h", label: "Tiempo de respuesta", green: true },
+  { value: "100%", label: "Compromiso con tu empresa", green: false },
+];
+---
+
+<section class="w-full bg-[#F8FAFC]">
+  <div
+    class="max-w-[1440px] mx-auto flex flex-wrap justify-around items-center
+           px-6 md:px-[120px] py-6 md:py-0 md:h-[100px]
+           gap-y-6"
+  >
+    {stats.map((stat) => (
+      <div class="flex flex-col items-center text-center w-1/2 md:w-auto">
+        <span
+          class:list={[
+            "font-[Montserrat] text-[36px] font-bold leading-tight",
+            stat.green ? "text-[#4CAF7A]" : "text-[#2B2A5A]",
+          ]}
+        >
+          {stat.value}
+        </span>
+        <span class="font-[Open_Sans] text-[14px] text-[#64748B] leading-snug">
+          {stat.label}
+        </span>
+      </div>
+    ))}
+  </div>
+</section>

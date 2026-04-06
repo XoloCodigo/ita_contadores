@@ -1,0 +1,208 @@
+---
+// Navbar.astro – ITA Contadores sticky navbar
+---
+
+<header
+  id="navbar"
+  class="fixed top-0 left-0 w-full z-50 bg-white transition-shadow duration-300"
+>
+  <nav class="flex items-center justify-between h-[80px] px-6 lg:px-20 max-w-[1440px] mx-auto">
+    <!-- Logo -->
+    <a href="#hero" class="shrink-0">
+      <img
+        src="/images/logo-navbar.png"
+        alt="ITA Contadores"
+        class="h-[40px] w-auto"
+      />
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="hidden lg:flex items-center gap-8 font-[Montserrat] text-[15px] font-medium">
+      <li>
+        <a href="#hero" class="text-[#4CAF7A] hover:text-[#4CAF7A] transition-colors">
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a href="#servicios" class="text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+          Servicios
+        </a>
+      </li>
+      <li>
+        <a href="#nosotros" class="text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+          Nosotros
+        </a>
+      </li>
+      <li>
+        <a href="#blog" class="text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+          Blog
+        </a>
+      </li>
+      <li>
+        <a href="#contacto" class="text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+          Contacto
+        </a>
+      </li>
+    </ul>
+
+    <!-- Desktop CTA Button -->
+    <a
+      href="#contacto"
+      class="hidden lg:inline-flex items-center gap-2 bg-[#F2C94C] text-[#2B2A5A] font-[Montserrat] text-[15px] font-semibold rounded-full px-6 py-3 hover:bg-[#e6bc3f] transition-colors"
+    >
+      <!-- Lucide Phone icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+        ></path>
+      </svg>
+      Agenda Asesor&iacute;a
+    </a>
+
+    <!-- Mobile Hamburger Button -->
+    <button
+      id="menu-toggle"
+      class="lg:hidden flex items-center justify-center w-10 h-10 text-[#4B5563]"
+      aria-label="Abrir menú"
+    >
+      <!-- Lucide Menu icon -->
+      <svg
+        id="icon-menu"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="4" x2="20" y1="12" y2="12"></line>
+        <line x1="4" x2="20" y1="6" y2="6"></line>
+        <line x1="4" x2="20" y1="18" y2="18"></line>
+      </svg>
+      <!-- Lucide X icon (hidden by default) -->
+      <svg
+        id="icon-close"
+        class="hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden bg-white border-t border-gray-100 px-6 pb-6"
+  >
+    <ul class="flex flex-col gap-4 pt-4 font-[Montserrat] text-[15px] font-medium">
+      <li>
+        <a href="#hero" class="block text-[#4CAF7A] hover:text-[#4CAF7A] transition-colors">
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a href="#servicios" class="block text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+          Servicios
+        </a>
+      </li>
+      <li>
+        <a href="#nosotros" class="block text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+          Nosotros
+        </a>
+      </li>
+      <li>
+        <a href="#blog" class="block text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+          Blog
+        </a>
+      </li>
+      <li>
+        <a href="#contacto" class="block text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+          Contacto
+        </a>
+      </li>
+    </ul>
+    <a
+      href="#contacto"
+      class="inline-flex items-center gap-2 mt-4 bg-[#F2C94C] text-[#2B2A5A] font-[Montserrat] text-[15px] font-semibold rounded-full px-6 py-3 hover:bg-[#e6bc3f] transition-colors"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+        ></path>
+      </svg>
+      Agenda Asesor&iacute;a
+    </a>
+  </div>
+</header>
+
+<!-- Spacer to offset fixed navbar -->
+<div class="h-[80px]"></div>
+
+<script>
+  // Shadow on scroll
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 10) {
+      navbar?.classList.add("shadow-md");
+    } else {
+      navbar?.classList.remove("shadow-md");
+    }
+  });
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const iconMenu = document.getElementById("icon-menu");
+  const iconClose = document.getElementById("icon-close");
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = !mobileMenu?.classList.contains("hidden");
+    mobileMenu?.classList.toggle("hidden");
+    iconMenu?.classList.toggle("hidden");
+    iconClose?.classList.toggle("hidden");
+    menuToggle.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
+  });
+
+  // Close mobile menu when a link is clicked
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      iconMenu?.classList.remove("hidden");
+      iconClose?.classList.add("hidden");
+      menuToggle?.setAttribute("aria-label", "Abrir menú");
+    });
+  });
+</script>

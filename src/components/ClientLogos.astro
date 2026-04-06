@@ -1,0 +1,61 @@
+---
+// ClientLogos.astro – Infinite marquee of client logos
+const logos = [
+  "1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg",
+  "6.png", "7.jpg", "8.jpeg", "9.png", "10.jpg",
+  "11.png", "12.png", "13.jpg", "14.jpg", "15.jpg",
+  "17.jpg", "18.jpg", "19.jpg", "20.jpg", "21.jpg",
+];
+---
+
+<section class="w-full bg-white py-12 px-6 md:px-20 overflow-hidden">
+  <!-- Title -->
+  <h2
+    class="text-center font-[Montserrat] text-[12px] font-semibold tracking-widest text-[#94A3B8] mb-10"
+  >
+    EMPRESAS QUE CONFÍAN EN NOSOTROS
+  </h2>
+
+  <!-- Marquee wrapper -->
+  <div class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+    <div class="marquee-track flex items-center gap-14 w-max">
+      {/* First set */}
+      {logos.map((file) => (
+        <img
+          src={`/images/clientes/${file}`}
+          alt="Cliente"
+          class="h-[50px] w-auto object-contain grayscale opacity-70 shrink-0"
+          loading="lazy"
+        />
+      ))}
+      {/* Duplicate set for seamless loop */}
+      {logos.map((file) => (
+        <img
+          src={`/images/clientes/${file}`}
+          alt="Cliente"
+          class="h-[50px] w-auto object-contain grayscale opacity-70 shrink-0"
+          loading="lazy"
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+</style>

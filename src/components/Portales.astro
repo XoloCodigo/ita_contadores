@@ -1,0 +1,151 @@
+---
+// Portales.astro – Government portals resource grid
+const portals = [
+  {
+    name: "SAT",
+    desc: "Servicio de Administración Tributaria. Declaraciones, facturación y trámites fiscales.",
+    url: "sat.gob.mx",
+    href: "https://www.sat.gob.mx",
+    color: "#B91C1C",
+    bg: "#FEF2F2",
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-6h6v6"/></svg>`,
+  },
+  {
+    name: "IMSS",
+    desc: "Instituto Mexicano del Seguro Social. Altas, bajas y movimientos de empleados.",
+    url: "imss.gob.mx",
+    href: "https://www.imss.gob.mx",
+    color: "#047857",
+    bg: "#ECFDF5",
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+  },
+  {
+    name: "INFONAVIT",
+    desc: "Instituto del Fondo Nacional de la Vivienda. Aportaciones y créditos de vivienda.",
+    url: "infonavit.org.mx",
+    href: "https://www.infonavit.org.mx",
+    color: "#0369A1",
+    bg: "#F0F9FF",
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  },
+  {
+    name: "DOF",
+    desc: "Diario Oficial de la Federación. Publicaciones legales y normativas vigentes.",
+    url: "dof.gob.mx",
+    href: "https://www.dof.gob.mx",
+    color: "#7C3AED",
+    bg: "#F5F3FF",
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+  },
+  {
+    name: "SE",
+    desc: "Secretaría de Economía. Programas de apoyo, regulación comercial y trámites empresariales.",
+    url: "economia.gob.mx",
+    href: "https://www.economia.gob.mx",
+    color: "#B45309",
+    bg: "#FFFBEB",
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+  },
+  {
+    name: "STPS",
+    desc: "Secretaría del Trabajo y Previsión Social. Normatividad laboral y obligaciones patronales.",
+    url: "stps.gob.mx",
+    href: "https://www.stps.gob.mx",
+    color: "#0E7490",
+    bg: "#ECFEFF",
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="#0E7490" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  },
+  {
+    name: "BANXICO",
+    desc: "Banco de México. Tipos de cambio, indicadores económicos y política monetaria.",
+    url: "banxico.org.mx",
+    href: "https://www.banxico.org.mx",
+    color: "#059669",
+    bg: "#ECFDF5",
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>`,
+  },
+  {
+    name: "SAT PyS",
+    desc: "Portal de Pagos y Servicios del SAT. Generación de líneas de captura y pagos en línea.",
+    url: "pys.sat.gob.mx",
+    href: "https://pys.sat.gob.mx",
+    color: "#DC2626",
+    bg: "#FEF2F2",
+    icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>`,
+  },
+];
+---
+
+<section class="w-full bg-white py-[80px] px-6 md:px-[80px]">
+  <div class="max-w-[1440px] mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <span
+        class="inline-block font-[Montserrat] text-[12px] font-semibold text-[#4CAF7A] tracking-widest uppercase mb-3"
+      >
+        Recursos oficiales
+      </span>
+      <h2
+        class="font-[Montserrat] text-[28px] md:text-[38px] font-bold text-[#1E293B] leading-tight mb-4"
+      >
+        Portales del gobierno
+      </h2>
+      <p class="text-[#64748B] text-base md:text-lg max-w-2xl mx-auto">
+        Accede directamente a los portales oficiales que necesitas para tus trámites fiscales, laborales y financieros.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {portals.map((p) => (
+        <a
+          href={p.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:border-[#CBD5E1] hover:-translate-y-1"
+        >
+          <!-- Top row: icon + external link -->
+          <div class="flex items-center justify-between mb-4">
+            <div
+              class="w-12 h-12 rounded-lg flex items-center justify-center"
+              style={`background: ${p.bg};`}
+            >
+              <Fragment set:html={p.icon} />
+            </div>
+            <svg
+              class="w-4 h-4 text-[#94A3B8] group-hover:text-[#64748B] transition-colors"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </div>
+
+          <!-- Name badge -->
+          <span
+            class="inline-block text-[13px] font-semibold font-[Montserrat] rounded-md px-3 py-1 mb-3"
+            style={`background: ${p.bg}; color: ${p.color};`}
+          >
+            {p.name}
+          </span>
+
+          <!-- Description -->
+          <p class="text-[#475569] text-[13px] leading-relaxed mb-3">
+            {p.desc}
+          </p>
+
+          <!-- URL -->
+          <span class="text-[#94A3B8] text-[12px] font-medium">
+            {p.url}
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
