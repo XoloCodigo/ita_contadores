@@ -1,47 +1,478 @@
 ---
-// Diagnostico section - ITA Contadores
+// Diagnostico section + Quiz modal - ITA Contadores
 ---
 
+<!-- CTA Section -->
 <section
   id="diagnostico"
-  class="relative w-full flex items-center justify-center overflow-hidden py-20 px-6 lg:px-[120px]"
-  style="background: linear-gradient(135deg, #2B2A5A 0%, #363473 100%);"
+  class="relative w-full flex items-center justify-center overflow-hidden py-16 md:py-20 px-6 md:px-16 lg:px-[120px] bg-linear-to-br from-azul to-azul-light"
 >
   <div class="w-full max-w-3xl mx-auto flex flex-col items-center text-center gap-6">
-
-    <!-- Badge pill -->
     <div class="inline-flex items-center gap-2 bg-white/10 rounded-full px-5 py-2">
-      <!-- clipboard-check icon -->
       <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
       </svg>
-      <span class="text-white text-[13px] font-heading font-medium tracking-wide">
-        Herramienta gratuita
-      </span>
+      <span class="text-white text-[13px] font-heading font-medium tracking-wide">Herramienta gratuita</span>
     </div>
-
-    <!-- Title -->
-    <h2 class="text-white text-[32px] md:text-[40px] font-heading font-bold italic leading-tight max-w-2xl">
-      ¿Estás pagando más impuestos de los que deberías?
+    <h2 class="text-white text-[32px] md:text-[40px] font-heading font-bold leading-tight max-w-2xl">
+      &iquest;Est&aacute;s pagando m&aacute;s impuestos de los que deber&iacute;as?
     </h2>
-
-    <!-- Subtitle -->
     <p class="text-white/70 text-base font-body max-w-xl">
-      Responde 7 preguntas rápidas y descubre si estás aprovechando todos los beneficios fiscales disponibles para tu negocio.
+      Responde 7 preguntas r&aacute;pidas y recibe un diagn&oacute;stico personalizado de tu salud fiscal, con recomendaciones concretas para tu negocio.
     </p>
-
-    <!-- CTA Button -->
-    <a
-      href="#diagnostico-quiz"
-      class="inline-flex items-center bg-amarillo text-azul font-heading font-semibold text-base rounded-xl px-8 py-4 hover:bg-amarillo/90 transition-colors mt-2"
+    <button
+      id="open-quiz"
+      class="inline-flex items-center bg-verde text-white font-heading font-semibold text-base rounded-full px-8 py-4 hover:bg-verde/90 transition-colors mt-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-verde"
     >
-      Iniciar diagnóstico gratuito &rarr;
-    </a>
-
-    <!-- Note -->
-    <p class="text-white/40 text-[13px] font-body">
-      Sin registro · Solo 2 minutos · Resultado inmediato
+      Iniciar diagn&oacute;stico gratuito &rarr;
+    </button>
+    <p class="text-white/60 text-[13px] font-body">
+      Sin registro &middot; Solo 2 minutos &middot; Resultado inmediato
     </p>
-
   </div>
 </section>
+
+<!-- Quiz Modal -->
+<div id="quiz-modal" class="fixed inset-0 z-[100] hidden">
+  <!-- Backdrop -->
+  <div id="quiz-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+  <!-- Modal container -->
+  <div class="relative z-10 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-2xl w-full max-w-[560px] max-h-[90vh] overflow-y-auto shadow-2xl">
+
+      <!-- Header -->
+      <div class="flex items-center justify-between px-6 pt-6 pb-2">
+        <span class="text-verde text-[12px] font-heading font-bold tracking-[0.15em] uppercase">
+          DIAGN&Oacute;STICO FISCAL GRATUITO
+        </span>
+        <button id="close-quiz" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer">
+          <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="px-6 pb-4">
+        <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <div id="quiz-progress" class="h-full bg-verde rounded-full transition-all duration-500" style="width: 14.28%"></div>
+        </div>
+      </div>
+
+      <!-- Quiz content (questions) -->
+      <div id="quiz-questions" class="px-6 pb-6">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Result screen -->
+      <div id="quiz-result" class="px-6 pb-6 hidden">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Navigation -->
+      <div id="quiz-nav" class="flex items-center justify-between px-6 pb-6">
+        <button id="quiz-prev" class="inline-flex items-center gap-2 text-verde font-heading font-semibold text-[14px] hover:text-verde/80 transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed" disabled>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          Anterior
+        </button>
+        <button id="quiz-next" class="inline-flex items-center gap-2 bg-azul text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-azul-light transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed" disabled>
+          Siguiente
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Prefetch jsPDF when user scrolls near the diagnostico section
+  const diagSection = document.getElementById("diagnostico");
+  if (diagSection) {
+    const prefetchObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        const link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = "https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js";
+        link.as = "script";
+        document.head.appendChild(link);
+        prefetchObserver.disconnect();
+      }
+    }, { rootMargin: "200px" });
+    prefetchObserver.observe(diagSection);
+  }
+
+  const questions = [
+    {
+      id: "tipo",
+      label: "Tipo de empresa",
+      question: "¿Cuál es el tipo de tu empresa?",
+      options: ["Persona Física", "Persona Moral", "Aún no tengo empresa formalmente"],
+      scores: [10, 15, 5],
+    },
+    {
+      id: "sector",
+      label: "Sector",
+      question: "¿En qué sector opera tu negocio?",
+      options: ["Comercio", "Servicios", "Manufactura", "Tecnología", "Construcción", "Otro"],
+      scores: [10, 10, 10, 15, 10, 10],
+    },
+    {
+      id: "ingresos",
+      label: "Ingresos mensuales",
+      question: "¿Cuál es tu rango de ingresos mensuales aproximados?",
+      options: ["Menos de $50,000", "$50,000 – $200,000", "$200,000 – $500,000", "Más de $500,000"],
+      scores: [10, 12, 14, 15],
+    },
+    {
+      id: "contabilidad",
+      label: "Contabilidad",
+      question: "¿Tienes contabilidad al corriente actualmente?",
+      options: ["Sí, actualizada", "Tengo algunos atrasos", "No llevo contabilidad formal"],
+      scores: [15, 8, 3],
+    },
+    {
+      id: "declaraciones",
+      label: "Declaraciones",
+      question: "¿Presentas tus declaraciones a tiempo?",
+      options: ["Siempre a tiempo", "A veces me atraso", "Con frecuencia tengo atrasos", "No las presento"],
+      scores: [15, 9, 4, 0],
+    },
+    {
+      id: "estrategia",
+      label: "Estrategia fiscal",
+      question: "¿Utilizas alguna estrategia para reducir tu carga fiscal?",
+      options: ["Sí, de forma activa", "Solo lo básico", "No, pago lo que llega", "No sé si podría hacer algo"],
+      scores: [15, 10, 4, 2],
+    },
+    {
+      id: "preocupacion",
+      label: "Preocupación principal",
+      question: "¿Cuál es tu mayor preocupación fiscal o financiera?",
+      options: ["Evitar multas del SAT", "Pagar menos impuestos", "Ordenar mi contabilidad", "Crecer sin riesgos"],
+      scores: [10, 10, 10, 10],
+    },
+  ];
+
+  let current = 0;
+  const answers: number[] = new Array(questions.length).fill(-1);
+
+  const modal = document.getElementById("quiz-modal")!;
+  const backdrop = document.getElementById("quiz-backdrop")!;
+  const openBtn = document.getElementById("open-quiz")!;
+  const closeBtn = document.getElementById("close-quiz")!;
+  const progress = document.getElementById("quiz-progress")!;
+  const questionsContainer = document.getElementById("quiz-questions")!;
+  const resultContainer = document.getElementById("quiz-result")!;
+  const navContainer = document.getElementById("quiz-nav")!;
+  const prevBtn = document.getElementById("quiz-prev") as HTMLButtonElement;
+  const nextBtn = document.getElementById("quiz-next") as HTMLButtonElement;
+
+  function openModal() {
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    renderQuestion();
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+
+  function renderQuestion() {
+    const q = questions[current];
+    progress.style.width = `${((current + 1) / questions.length) * 100}%`;
+
+    questionsContainer.innerHTML = `
+      <h3 class="font-heading text-[22px] md:text-[26px] font-bold text-azul leading-tight mb-6">${q.question}</h3>
+      <div class="flex flex-col gap-3">
+        ${q.options.map((opt, i) => `
+          <button
+            data-option="${i}"
+            class="quiz-option w-full text-left border rounded-xl px-5 py-4 text-[15px] font-body transition-all duration-200 cursor-pointer
+              ${answers[current] === i
+                ? 'border-verde bg-verde/5 text-azul font-semibold'
+                : 'border-border bg-white text-[#4B5563] hover:border-verde/50 hover:bg-verde/[0.02]'
+              }"
+          >
+            <span class="flex items-center gap-3">
+              <span class="w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0
+                ${answers[current] === i ? 'border-verde' : 'border-gray-300'}">
+                ${answers[current] === i ? '<span class="w-2.5 h-2.5 rounded-full bg-verde"></span>' : ''}
+              </span>
+              ${opt}
+            </span>
+          </button>
+        `).join("")}
+      </div>
+    `;
+
+    // Bind option clicks
+    questionsContainer.querySelectorAll(".quiz-option").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = parseInt(btn.getAttribute("data-option")!);
+        answers[current] = idx;
+        renderQuestion();
+      });
+    });
+
+    // Update nav
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = answers[current] === -1;
+    nextBtn.textContent = "";
+    nextBtn.innerHTML = current === questions.length - 1
+      ? 'Ver resultado <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>'
+      : 'Siguiente <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>';
+  }
+
+  prevBtn.addEventListener("click", () => {
+    if (current > 0) { current--; renderQuestion(); }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (answers[current] === -1) return;
+    if (current < questions.length - 1) {
+      current++;
+      renderQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  function getScoreData(score: number) {
+    if (score >= 80) return {
+      label: "Saludable",
+      color: "#4CAF7A",
+      icon: `<svg class="w-12 h-12 text-verde" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+      reco: {
+        title: "Optimización continua",
+        desc: "Tu situación es buena, pero siempre hay oportunidades para mejorar la rentabilidad y la planificación a largo plazo.",
+      },
+    };
+    if (score >= 55) return {
+      label: "Moderado",
+      color: "#F59E0B",
+      icon: `<svg class="w-12 h-12 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>`,
+      reco: {
+        title: "Revisión recomendada",
+        desc: "Hay áreas de oportunidad importantes. Una revisión fiscal profesional podría ayudarte a evitar riesgos y optimizar tu carga tributaria.",
+      },
+    };
+    return {
+      label: "En riesgo",
+      color: "#EF4444",
+      icon: `<svg class="w-12 h-12 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+      reco: {
+        title: "Atención urgente",
+        desc: "Tu situación fiscal requiere atención inmediata. Es importante regularizarte para evitar multas, recargos y problemas con el SAT.",
+      },
+    };
+  }
+
+  function showResult() {
+    const totalScore = answers.reduce((sum, ans, i) => sum + (questions[i].scores[ans] || 0), 0);
+    const maxScore = questions.reduce((sum, q) => sum + Math.max(...q.scores), 0);
+    const score = Math.round((totalScore / maxScore) * 100);
+    const data = getScoreData(score);
+
+    questionsContainer.classList.add("hidden");
+    navContainer.classList.add("hidden");
+    progress.style.width = "100%";
+    resultContainer.classList.remove("hidden");
+
+    const answersHtml = questions.map((q, i) => `
+      <div class="flex justify-between py-2 border-b border-gray-100 last:border-0">
+        <span class="text-gris text-[13px]">${q.label}:</span>
+        <span class="text-azul text-[13px] font-semibold text-right">${q.options[answers[i]]}</span>
+      </div>
+    `).join("");
+
+    resultContainer.innerHTML = `
+      <div class="text-center mb-2">
+        <span class="text-verde text-[12px] font-heading font-bold tracking-[0.15em] uppercase">TU DIAGN&Oacute;STICO FISCAL</span>
+        <h3 class="font-heading text-[24px] md:text-[28px] font-bold text-azul mt-2 mb-6">Resultado personalizado</h3>
+      </div>
+
+      <!-- Score card -->
+      <div class="border border-verde/30 rounded-2xl p-6 flex flex-col items-center text-center mb-6 bg-verde/[0.03]">
+        ${data.icon}
+        <p class="font-heading text-[42px] font-bold mt-3" style="color: ${data.color}">${score}/100</p>
+        <p class="font-heading text-[16px] font-bold" style="color: ${data.color}">${data.label}</p>
+        <p class="text-gris text-[13px] font-body mt-1">Basado en tus respuestas, este es el estado actual de tu salud fiscal.</p>
+      </div>
+
+      <!-- Recommendation -->
+      <h4 class="font-heading text-[16px] font-bold text-azul mb-3">Recomendaciones para tu negocio</h4>
+      <div class="bg-verde/5 border border-verde/20 rounded-xl p-4 flex items-start gap-3 mb-6">
+        <div class="w-8 h-8 rounded-lg bg-verde/10 flex items-center justify-center shrink-0">
+          <svg class="w-4 h-4 text-verde" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+        <div>
+          <p class="font-heading text-[14px] font-bold text-azul">${data.reco.title}</p>
+          <p class="text-gris text-[13px] font-body leading-relaxed">${data.reco.desc}</p>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <button id="download-pdf" class="inline-flex items-center justify-center gap-2 border border-border rounded-xl px-4 py-3 text-azul font-heading font-semibold text-[13px] hover:bg-gray-50 transition-colors cursor-pointer">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Descargar PDF
+        </button>
+        <a href="#contacto" class="inline-flex items-center justify-center gap-2 bg-verde text-white rounded-xl px-4 py-3 font-heading font-semibold text-[13px] hover:bg-verde/90 transition-colors" onclick="document.getElementById('quiz-modal').classList.add('hidden'); document.body.style.overflow='';">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          Hablar con un experto
+        </a>
+      </div>
+    `;
+
+    // PDF generation
+    document.getElementById("download-pdf")?.addEventListener("click", () => generatePDF(score, data));
+  }
+
+  async function generatePDF(score: number, data: ReturnType<typeof getScoreData>) {
+    const btn = document.getElementById("download-pdf") as HTMLButtonElement;
+    if (btn) { btn.disabled = true; btn.innerHTML = '<span class="animate-pulse">Generando PDF...</span>'; }
+
+    // Load jsPDF from CDN dynamically (try multiple CDNs)
+    if (!(window as any).jspdf) {
+      const cdns = [
+        "https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js",
+        "https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js",
+      ];
+      let loaded = false;
+      for (const cdn of cdns) {
+        if (loaded) break;
+        try {
+          await new Promise<void>((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = cdn;
+            script.onload = () => { loaded = true; resolve(); };
+            script.onerror = () => reject(new Error("CDN failed"));
+            document.head.appendChild(script);
+          });
+        } catch { /* try next CDN */ }
+      }
+      if (!loaded || !(window as any).jspdf) {
+        alert("No se pudo generar el PDF. Intenta de nuevo.");
+        if (btn) { btn.disabled = false; btn.innerHTML = 'Descargar PDF'; }
+        return;
+      }
+    }
+
+    const { jsPDF } = (window as any).jspdf;
+    const doc = new jsPDF({ unit: "mm", format: "a4" });
+    const W = 210;
+    const margin = 20;
+    const contentW = W - margin * 2;
+    let y = 0;
+
+    // Header bar
+    doc.setFillColor(53, 43, 115); // #352B73
+    doc.rect(0, 0, W, 36, "F");
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(20);
+    doc.setFont("helvetica", "bold");
+    doc.text("ITA Contadores", margin, 16);
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "normal");
+    doc.text("Diagnóstico Fiscal Gratuito", margin, 24);
+
+    y = 50;
+
+    // Title
+    doc.setTextColor(53, 43, 115);
+    doc.setFontSize(18);
+    doc.setFont("helvetica", "bold");
+    doc.text("Resultado de tu diagnóstico", margin, y);
+    y += 12;
+
+    // Score
+    const scoreColor = score >= 80 ? [76, 175, 122] : score >= 55 ? [245, 158, 11] : [239, 68, 68];
+    doc.setTextColor(scoreColor[0], scoreColor[1], scoreColor[2]);
+    doc.setFontSize(32);
+    doc.setFont("helvetica", "bold");
+    doc.text(`${score}/100`, margin, y);
+    y += 10;
+
+    // Status
+    doc.setFontSize(14);
+    doc.text(`Estado: ${data.label}`, margin, y);
+    y += 14;
+
+    // Answers section
+    doc.setTextColor(53, 43, 115);
+    doc.setFontSize(13);
+    doc.setFont("helvetica", "bold");
+    doc.text("Tus respuestas:", margin, y);
+    y += 8;
+
+    doc.setFontSize(10);
+    questions.forEach((q, i) => {
+      // Label
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(136, 136, 136);
+      doc.text(`${q.label}:`, margin, y);
+      // Value
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(53, 43, 115);
+      doc.text(q.options[answers[i]], W - margin, y, { align: "right" });
+      // Line
+      doc.setDrawColor(238, 238, 238);
+      doc.line(margin, y + 2, W - margin, y + 2);
+      y += 8;
+    });
+
+    y += 6;
+
+    // Recommendations
+    doc.setTextColor(53, 43, 115);
+    doc.setFontSize(13);
+    doc.setFont("helvetica", "bold");
+    doc.text("Recomendaciones iniciales:", margin, y);
+    y += 8;
+
+    doc.setFontSize(11);
+    doc.text(`1. ${data.reco.title}`, margin, y);
+    y += 6;
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.setTextColor(80, 80, 80);
+    const recoLines = doc.splitTextToSize(data.reco.desc, contentW);
+    doc.text(recoLines, margin, y);
+    y += recoLines.length * 5 + 10;
+
+    // CTA box
+    doc.setFillColor(240, 244, 255);
+    doc.roundedRect(margin, y, contentW, 22, 3, 3, "F");
+    doc.setTextColor(53, 43, 115);
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "bold");
+    doc.text("¿Listo para mejorar tu situación fiscal?", margin + 6, y + 8);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9);
+    doc.setTextColor(85, 85, 85);
+    doc.text("Agenda una asesoría personalizada: contacto@itacontadores.com", margin + 6, y + 15);
+
+    // Download
+    doc.save("diagnostico-fiscal-ita.pdf");
+
+    // Reset button
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Descargar PDF';
+    }
+  }
+
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
+  });
+</script>

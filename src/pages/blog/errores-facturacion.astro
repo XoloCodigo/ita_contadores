@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+
+const title = "Errores comunes en facturación que te pueden multar";
+const category = "Fiscal";
+const time = 4;
+const date = "1 de abril, 2026";
+---
+
+<Layout title={`${title} - Blog ITA Contadores`} description="Conoce los errores más frecuentes que cometen las empresas al facturar y cómo evitarlos fácilmente.">
+  <Navbar />
+  <WhatsAppButton />
+
+  <main class="pt-[100px] pb-20 px-6 md:px-16 lg:px-20">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-[13px] font-body text-gris-light mb-8">
+        <a href="/" class="hover:text-verde transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/#blog" class="hover:text-verde transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gris">{title}</span>
+      </nav>
+
+      <!-- Category + meta -->
+      <span class="inline-block bg-azul text-white text-[11px] font-heading font-semibold tracking-wide uppercase px-3 py-1.5 rounded-lg mb-4">
+        {category}
+      </span>
+      <h1 class="font-heading text-[28px] md:text-[36px] font-bold text-azul leading-tight mb-4">
+        {title}
+      </h1>
+      <div class="flex items-center gap-4 text-gris-light text-[13px] font-body mb-10">
+        <span>{date}</span>
+        <span>&middot;</span>
+        <span>{time} min de lectura</span>
+      </div>
+
+      <!-- Article content -->
+      <article class="space-y-6 text-[15px] font-body text-[#4B5563] leading-[1.8]">
+
+        <p>
+          La facturaci&oacute;n electr&oacute;nica es una de las obligaciones m&aacute;s importantes para cualquier empresa en M&eacute;xico. Sin embargo, muchos negocios cometen errores que pueden resultar en multas significativas por parte del SAT. En este art&iacute;culo, te compartimos los errores m&aacute;s frecuentes y c&oacute;mo evitarlos.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">1. Datos fiscales incorrectos del receptor</h2>
+        <p>
+          Uno de los errores m&aacute;s comunes es emitir facturas con el RFC, nombre o r&eacute;gimen fiscal incorrecto del cliente. Desde 2022, el SAT exige que el r&eacute;gimen fiscal y el c&oacute;digo postal del receptor coincidan exactamente con los registrados en su Constancia de Situaci&oacute;n Fiscal.
+        </p>
+        <p>
+          <strong>C&oacute;mo evitarlo:</strong> Solicita siempre la Constancia de Situaci&oacute;n Fiscal actualizada de tus clientes antes de facturar. Verifica que todos los datos coincidan antes de timbrar.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">2. Uso incorrecto de claves de producto o servicio</h2>
+        <p>
+          El cat&aacute;logo de productos y servicios del SAT contiene miles de claves. Utilizar una clave incorrecta no solo puede generar problemas con la deducibilidad de la factura, sino tambi&eacute;n multas por informaci&oacute;n inconsistente.
+        </p>
+        <p>
+          <strong>C&oacute;mo evitarlo:</strong> Consulta el cat&aacute;logo oficial del SAT (disponible en nuestra secci&oacute;n de Portales) y aseg&uacute;rate de seleccionar la clave que mejor describa tu producto o servicio.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">3. No cancelar facturas dentro del plazo</h2>
+        <p>
+          Desde 2022, las facturas solo pueden cancelarse dentro del mismo ejercicio fiscal en que fueron emitidas. Cancelar fuera de plazo puede resultar en multas del 5% al 10% del monto de la factura.
+        </p>
+        <p>
+          <strong>C&oacute;mo evitarlo:</strong> Revisa tus facturas emitidas mensualmente y realiza las cancelaciones necesarias antes de que cierre el ejercicio fiscal.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">4. No emitir factura cuando es obligatorio</h2>
+        <p>
+          Todo contribuyente est&aacute; obligado a emitir factura por cada operaci&oacute;n que realice, incluso cuando el cliente no la solicite. La omisi&oacute;n puede generar multas de $17,020 a $97,330 MXN por cada factura no emitida.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">5. Errores en el m&eacute;todo y forma de pago</h2>
+        <p>
+          Confundir &ldquo;Pago en una sola exhibici&oacute;n&rdquo; (PUE) con &ldquo;Pago en parcialidades o diferido&rdquo; (PPD) es un error frecuente que puede causar discrepancias en las conciliaciones del SAT.
+        </p>
+        <p>
+          <strong>C&oacute;mo evitarlo:</strong> Si el pago se realiza en el mismo mes de la factura, usa PUE. Si se pagar&aacute; despu&eacute;s, usa PPD y no olvides generar el complemento de pago correspondiente.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">Conclusi&oacute;n</h2>
+        <p>
+          La facturaci&oacute;n correcta no es solo una obligaci&oacute;n fiscal, es una herramienta de control y orden para tu negocio. Si tienes dudas sobre c&oacute;mo manejar tu facturaci&oacute;n, en ITA Contadores podemos ayudarte a evitar errores costosos y mantener tu empresa al d&iacute;a.
+        </p>
+
+        <!-- CTA -->
+        <div class="bg-verde/10 border border-verde/20 rounded-xl p-6 mt-8">
+          <p class="font-heading text-[16px] font-bold text-azul mb-2">&iquest;Necesitas ayuda con tu facturaci&oacute;n?</p>
+          <p class="text-gris text-[14px] mb-4">Nuestro equipo puede revisar tu situaci&oacute;n fiscal y asegurarse de que todo est&eacute; en orden.</p>
+          <a href="/#contacto" class="inline-flex items-center gap-2 bg-verde text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-verde/90 transition-colors">
+            Agenda una asesor&iacute;a gratuita &rarr;
+          </a>
+        </div>
+      </article>
+
+      <div class="mt-12 pt-8 border-t border-border">
+        <a href="/#blog" class="inline-flex items-center gap-2 text-verde font-heading font-semibold text-[14px] hover:underline">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          Volver al blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

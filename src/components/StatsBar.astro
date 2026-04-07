@@ -8,23 +8,23 @@ const stats = [
 ];
 ---
 
-<section class="w-full bg-[#F8FAFC]">
+<section class="w-full bg-bg" aria-label="Estadísticas de ITA Contadores">
   <div
     class="max-w-[1440px] mx-auto flex flex-wrap justify-around items-center
-           px-6 md:px-[120px] py-6 md:py-0 md:h-[100px]
+           px-6 md:px-20 lg:px-[120px] py-6 md:py-0 md:h-[100px]
            gap-y-6"
   >
     {stats.map((stat) => (
       <div class="flex flex-col items-center text-center w-1/2 md:w-auto">
         <span
           class:list={[
-            "font-[Montserrat] text-[36px] font-bold leading-tight",
-            stat.green ? "text-[#4CAF7A]" : "text-[#2B2A5A]",
+            "font-heading text-[28px] md:text-[36px] font-bold leading-tight",
+            stat.green ? "text-verde" : "text-azul",
           ]}
         >
           {stat.value}
         </span>
-        <span class="font-[Open_Sans] text-[14px] text-[#64748B] leading-snug">
+        <span class="font-body text-[13px] md:text-[14px] text-gris leading-snug">
           {stat.label}
         </span>
       </div>

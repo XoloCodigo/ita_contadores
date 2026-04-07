@@ -3,30 +3,33 @@
 
 const articles = [
   {
+    id: "facturacion",
     category: "Fiscal",
     title: "Errores comunes en facturación que te pueden multar",
-    description: "Descubre los errores más frecuentes al emitir facturas electrónicas y cómo evitar sanciones del SAT que pueden afectar tu negocio.",
+    description: "Conoce los errores más frecuentes que cometen las empresas al facturar y cómo evitarlos fácilmente.",
     time: 4,
-    gradient: "from-azul/60 to-azul-light/40",
+    image: "/images/blog/facturacion.svg",
   },
   {
+    id: "materialidad",
     category: "Estrategia",
     title: "Materialidad de las operaciones fiscales",
-    description: "Entiende qué es la materialidad fiscal y por qué el SAT la utiliza para verificar que tus operaciones sean reales y comprobables.",
+    description: "Estrategias fiscales 100% legales que muchas empresas desconocen y que pueden ahorrarte miles de pesos.",
     time: 5,
-    gradient: "from-azul-light/50 to-verde/30",
+    image: "/images/blog/materialidad.svg",
   },
   {
+    id: "estados-financieros",
     category: "Contabilidad",
     title: "Tu empresa necesita estados financieros 2026",
-    description: "Los estados financieros no solo son un requisito legal, son la brújula que guía las decisiones estratégicas de tu empresa.",
+    description: "Descubre cómo los estados financieros te ayudan a tomar mejores decisiones y acceder a créditos.",
     time: 3,
-    gradient: "from-verde/40 to-azul/50",
+    image: "/images/blog/estados-financieros.svg",
   },
 ];
 ---
 
-<section id="blog" class="w-full bg-white py-20 px-6 lg:px-20">
+<section id="blog" class="reveal w-full bg-white py-20 px-6 lg:px-20">
   <div class="max-w-7xl mx-auto">
 
     <!-- Header -->
@@ -34,70 +37,286 @@ const articles = [
       <span class="inline-block text-verde text-xs font-heading font-bold tracking-[0.15em] uppercase mb-3">
         Blog
       </span>
-      <h2 class="text-azul text-[32px] md:text-[38px] font-heading font-bold italic leading-tight mb-4">
+      <h2 class="text-azul text-[32px] md:text-[38px] font-heading font-bold leading-tight mb-4">
         Consejos para tu negocio
       </h2>
       <p class="text-gris text-base font-body max-w-lg mx-auto">
-        Artículos prácticos sobre contabilidad, impuestos y estrategia financiera para hacer crecer tu empresa.
+        Informaci&oacute;n pr&aacute;ctica que te ayuda a tomar mejores decisiones financieras y fiscales.
       </p>
     </div>
 
     <!-- Articles grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
       {articles.map((article) => (
         <article class="bg-white border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-
-          {/* Image placeholder */}
-          <div class={`relative h-[200px] bg-gray-200 bg-gradient-to-br ${article.gradient}`}>
-            {/* Category badge */}
+          <div class="relative h-[200px] overflow-hidden">
+            <img
+              src={article.image}
+              alt={article.title}
+              width="800"
+              height="400"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover"
+            />
             <span class="absolute top-4 left-4 bg-azul text-white text-[11px] font-heading font-semibold tracking-wide uppercase px-3 py-1.5 rounded-lg">
               {article.category}
             </span>
-            {/* Decorative elements */}
-            <div class="absolute inset-0 flex items-center justify-center opacity-20">
-              <svg class="w-16 h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-              </svg>
-            </div>
           </div>
-
-          {/* Content */}
           <div class="flex flex-col flex-1 p-6">
-            {/* Reading time */}
             <div class="flex items-center gap-1.5 mb-3">
-              {/* clock icon */}
               <svg class="w-3.5 h-3.5 text-gris-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span class="text-gris-light text-[12px] font-body">
-                {article.time} min de lectura
-              </span>
+              <span class="text-gris-light text-[12px] font-body">{article.time} min de lectura</span>
             </div>
-
-            {/* Title */}
-            <h3 class="text-azul text-[17px] font-heading font-bold leading-snug mb-2">
-              {article.title}
-            </h3>
-
-            {/* Description */}
-            <p class="text-gris text-[13px] font-body leading-relaxed mb-4 flex-1">
-              {article.description}
-            </p>
-
-            {/* Read more link */}
-            <a href="#" class="inline-flex items-center gap-1 text-verde text-[13px] font-heading font-semibold hover:underline transition-colors">
-              Leer más
+            <h3 class="text-azul text-[17px] font-heading font-bold leading-snug mb-2">{article.title}</h3>
+            <p class="text-gris text-[13px] font-body leading-relaxed mb-4 flex-1">{article.description}</p>
+            <button data-blog={article.id} class="blog-open inline-flex items-center gap-1 text-verde text-[13px] font-heading font-semibold hover:underline transition-colors cursor-pointer bg-transparent border-none p-0">
+              Leer m&aacute;s
               <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </a>
+            </button>
           </div>
-
         </article>
       ))}
-
     </div>
 
   </div>
 </section>
+
+<!-- Blog Modal -->
+<div id="blog-modal" class="fixed inset-0 z-[100] hidden">
+  <div id="blog-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+  <div class="relative z-10 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-2xl w-full max-w-[640px] max-h-[90vh] overflow-y-auto shadow-2xl">
+      <!-- Header -->
+      <div class="sticky top-0 bg-white z-10 flex items-center justify-between px-6 pt-6 pb-4 border-b border-border">
+        <span id="blog-modal-category" class="text-verde text-[12px] font-heading font-bold tracking-[0.15em] uppercase"></span>
+        <button id="blog-close" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer shrink-0">
+          <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Content -->
+      <div id="blog-modal-content" class="px-6 py-6"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const blogContent: Record<string, { category: string; title: string; html: string }> = {
+    facturacion: {
+      category: "FISCAL",
+      title: "Errores comunes en facturación que te pueden multar",
+      html: `
+        <h2 class="font-heading text-[22px] md:text-[26px] font-bold text-azul leading-tight mb-6">Errores comunes en facturación que te pueden multar</h2>
+
+        <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-5 mb-6">
+          <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-2">⚠️ ¿Por qué debes cuidar tu facturación?</p>
+          <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">En 2026, el CFDI 4.0 es el eje de fiscalización del SAT. Cada factura es validada en tiempo real y cruzada con declaraciones, nómina y contabilidad. Un error puede provocar desde rechazo del CFDI hasta multas, pérdida de deducciones o auditorías.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">1. ❌ Datos fiscales incorrectos del receptor</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li>RFC mal capturado</li>
+              <li>Nombre o razón social sin coincidencia exacta</li>
+              <li>Código postal incorrecto</li>
+            </ul>
+            <p class="text-verde text-[14px] font-body mt-3">👉 Un solo error invalida la factura o impide su deducción.</p>
+          </div>
+
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">2. ❌ Uso incorrecto del CFDI</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li>Elegir un uso que no corresponda al gasto real</li>
+              <li>Usar claves genéricas de forma indebida</li>
+            </ul>
+            <p class="text-verde text-[14px] font-body mt-3">👉 Puede invalidar deducciones o generar inconsistencias fiscales.</p>
+          </div>
+
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">3. ❌ Régimen fiscal incorrecto</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li>Emisor o receptor con régimen que no coincide con la Constancia de Situación Fiscal</li>
+              <li>No actualizar cambios de régimen ante el SAT</li>
+            </ul>
+            <p class="text-verde text-[14px] font-body mt-3">👉 El SAT rechaza automáticamente el CFDI si hay inconsistencia.</p>
+          </div>
+
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">4. ❌ No emitir complemento de pago</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li>Facturar como PUE cuando el pago es diferido</li>
+              <li>Omitir el complemento de pago (REP)</li>
+            </ul>
+            <p class="text-verde text-[14px] font-body mt-3">👉 Multas de $17,020 a $97,330 MXN por factura.</p>
+          </div>
+
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">5. ❌ Cancelación fuera de plazo</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li>Cancelar facturas fuera del ejercicio fiscal</li>
+              <li>No solicitar aceptación del receptor cuando es requerido</li>
+            </ul>
+            <p class="text-verde text-[14px] font-body mt-3">👉 Multa del 5% al 10% del monto de la factura.</p>
+          </div>
+        </div>
+
+        <div class="bg-verde/10 border border-verde/20 rounded-xl p-6 mt-8">
+          <p class="font-heading text-[16px] font-bold text-azul mb-2">¿Necesitas ayuda con tu facturación?</p>
+          <p class="text-gris text-[14px] mb-4">Nuestro equipo puede revisar tu situación fiscal y asegurarse de que todo esté en orden.</p>
+          <a href="#contacto" onclick="document.getElementById('blog-modal').classList.add('hidden'); document.body.style.overflow='';" class="inline-flex items-center gap-2 bg-verde text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-verde/90 transition-colors">
+            Agenda una asesoría gratuita →
+          </a>
+        </div>
+      `,
+    },
+    materialidad: {
+      category: "ESTRATEGIA",
+      title: "Materialidad de las operaciones fiscales",
+      html: `
+        <h2 class="font-heading text-[22px] md:text-[26px] font-bold text-azul leading-tight mb-6">Materialidad de las operaciones fiscales</h2>
+
+        <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-5 mb-6">
+          <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-2">⚠️ ¿Qué es la materialidad?</p>
+          <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">La materialidad se refiere a la capacidad de demostrar que una operación comercial realmente ocurrió. No basta con tener una factura; es necesario contar con evidencia de que el servicio se prestó o el producto se entregó.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">📋 ¿Qué revisa el SAT?</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li>Servicios profesionales y de consultoría (intangibles)</li>
+              <li>Operaciones entre partes relacionadas</li>
+              <li>Subcontratación de personal</li>
+              <li>Proveedores en la lista 69-B</li>
+              <li>Gastos desproporcionados al giro del negocio</li>
+            </ul>
+          </div>
+
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">🛡️ ¿Cómo demostrar la materialidad?</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li><strong>Contratos</strong> firmados entre las partes</li>
+              <li><strong>Evidencia de entrega</strong> (guías, acuses, fotos)</li>
+              <li><strong>Comprobantes de pago</strong> (transferencias, estados de cuenta)</li>
+              <li><strong>Comunicaciones</strong> (correos, órdenes de compra)</li>
+              <li><strong>Entregables</strong> (reportes, archivos, productos)</li>
+              <li><strong>Registro contable</strong> adecuado</li>
+            </ul>
+          </div>
+
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">⚖️ Consecuencias de no comprobar</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li>Rechazo de deducciones fiscales</li>
+              <li>No acreditamiento del IVA</li>
+              <li>Multas del 55% al 75% de contribuciones omitidas</li>
+              <li>Inclusión en lista negra del SAT (Art. 69-B CFF)</li>
+            </ul>
+            <p class="text-verde text-[14px] font-body mt-3">👉 La mejor defensa es la prevención: documenta cada operación desde el inicio.</p>
+          </div>
+        </div>
+
+        <div class="bg-verde/10 border border-verde/20 rounded-xl p-6 mt-8">
+          <p class="font-heading text-[16px] font-bold text-azul mb-2">¿Tus operaciones están bien documentadas?</p>
+          <p class="text-gris text-[14px] mb-4">Podemos revisar tu situación y ayudarte a blindar tus deducciones fiscales.</p>
+          <a href="#contacto" onclick="document.getElementById('blog-modal').classList.add('hidden'); document.body.style.overflow='';" class="inline-flex items-center gap-2 bg-verde text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-verde/90 transition-colors">
+            Solicitar revisión fiscal →
+          </a>
+        </div>
+      `,
+    },
+    "estados-financieros": {
+      category: "CONTABILIDAD",
+      title: "Tu empresa necesita estados financieros 2026",
+      html: `
+        <h2 class="font-heading text-[22px] md:text-[26px] font-bold text-azul leading-tight mb-6">Tu empresa necesita estados financieros 2026</h2>
+
+        <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-5 mb-6">
+          <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-2">📊 ¿Por qué son importantes?</p>
+          <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">Los estados financieros son la radiografía de la salud de tu empresa. Son la herramienta más poderosa para tomar decisiones informadas, acceder a créditos y atraer inversionistas.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">📑 Los 4 estados financieros clave</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li><strong>Balance General:</strong> Lo que tienes, lo que debes y tu patrimonio</li>
+              <li><strong>Estado de Resultados:</strong> Ingresos, gastos y utilidad del periodo</li>
+              <li><strong>Estado de Flujo de Efectivo:</strong> Cómo entra y sale el dinero</li>
+              <li><strong>Estado de Cambios en el Capital:</strong> Evolución de la inversión de socios</li>
+            </ul>
+          </div>
+
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">🏦 Acceso a créditos</p>
+            <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">Los bancos exigen estados financieros actualizados para evaluar solicitudes de crédito. Sin ellos, tu empresa queda fuera de las mejores opciones de financiamiento.</p>
+          </div>
+
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">🎯 Toma de decisiones</p>
+            <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">¿Deberías contratar más personal? ¿Es buen momento para invertir? ¿Tu margen de utilidad es saludable? Los estados financieros responden con datos reales, no con intuición.</p>
+          </div>
+
+          <div class="border border-border rounded-xl p-5">
+            <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">🚨 Señales de que necesitas actualizarlos</p>
+            <ul class="list-disc pl-5 space-y-1 text-[14px] font-body text-[#4B5563]">
+              <li>No sabes cuánto gana o pierde tu empresa cada mes</li>
+              <li>Tomas decisiones basadas en el saldo bancario</li>
+              <li>Un banco te rechazó un crédito por falta de documentación</li>
+              <li>Llevas más de 6 meses sin revisar tus números</li>
+            </ul>
+            <p class="text-verde text-[14px] font-body mt-3">👉 Los estados financieros no son un gasto, son una inversión en claridad.</p>
+          </div>
+        </div>
+
+        <div class="bg-verde/10 border border-verde/20 rounded-xl p-6 mt-8">
+          <p class="font-heading text-[16px] font-bold text-azul mb-2">¿Necesitas estados financieros actualizados?</p>
+          <p class="text-gris text-[14px] mb-4">Podemos prepararlos rápidamente para que tengas claridad sobre tu empresa.</p>
+          <a href="#contacto" onclick="document.getElementById('blog-modal').classList.add('hidden'); document.body.style.overflow='';" class="inline-flex items-center gap-2 bg-verde text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-verde/90 transition-colors">
+            Solicitar cotización →
+          </a>
+        </div>
+      `,
+    },
+  };
+
+  const blogModal = document.getElementById("blog-modal")!;
+  const blogBackdrop = document.getElementById("blog-backdrop")!;
+  const blogClose = document.getElementById("blog-close")!;
+  const blogCategory = document.getElementById("blog-modal-category")!;
+  const blogContentEl = document.getElementById("blog-modal-content")!;
+
+  function openBlog(id: string) {
+    const article = blogContent[id];
+    if (!article) return;
+    blogCategory.textContent = article.category;
+    blogContentEl.innerHTML = article.html;
+    blogModal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeBlog() {
+    blogModal.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".blog-open").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-blog");
+      if (id) openBlog(id);
+    });
+  });
+
+  blogClose.addEventListener("click", closeBlog);
+  blogBackdrop.addEventListener("click", closeBlog);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !blogModal.classList.contains("hidden")) closeBlog();
+  });
+</script>

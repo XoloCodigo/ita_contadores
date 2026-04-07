@@ -4,28 +4,31 @@
 
 <section
   id="hero"
-  class="relative w-full min-h-[620px] flex items-center overflow-hidden"
-  style="background: linear-gradient(135deg, #2B2A5A 0%, #363473 100%);"
+  class="relative w-full min-h-[520px] md:min-h-[620px] flex items-center overflow-hidden bg-linear-to-br from-azul to-azul-light"
 >
-  <!-- Background image with overlay -->
-  <div
-    class="absolute inset-0 opacity-35"
-    style="background-image: url('/images/hero.jpg'); background-size: cover; background-position: bottom;"
-  ></div>
-  <div class="absolute inset-0 bg-gradient-to-br from-azul/90 to-azul-light/80"></div>
+  <!-- Background image with overlay — uses optimized WebP with JPG fallback -->
+  <div class="absolute inset-0 opacity-35">
+    <picture>
+      <source srcset="/images/hero.webp" type="image/webp" />
+      <img
+        src="/images/hero-opt.jpg"
+        alt=""
+        role="presentation"
+        width="1920"
+        height="1280"
+        fetchpriority="high"
+        decoding="async"
+        class="w-full h-full object-cover object-bottom"
+      />
+    </picture>
+  </div>
+  <div class="absolute inset-0 bg-linear-to-br from-azul/90 to-azul-light/80"></div>
 
   <!-- Content -->
-  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 flex flex-col lg:flex-row items-center gap-12">
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 pt-[120px] pb-16 flex flex-col lg:flex-row items-center gap-12">
 
     <!-- Left side -->
     <div class="flex-1 lg:max-w-[60%]">
-      <!-- Badge pill -->
-      <div class="inline-flex items-center gap-2 bg-white/[0.12] rounded-full px-4 py-2 mb-6">
-        <span class="w-2.5 h-2.5 rounded-full bg-verde"></span>
-        <span class="text-white text-[13px] font-heading font-medium tracking-wide">
-          Tu aliado estratégico financiero
-        </span>
-      </div>
 
       <!-- Title -->
       <h1 class="text-white text-4xl md:text-[48px] font-heading font-bold leading-[1.15] mb-6">
@@ -41,13 +44,13 @@
       <div class="flex flex-wrap items-center gap-4">
         <a
           href="#contacto"
-          class="inline-flex items-center bg-amarillo text-azul font-heading font-semibold text-sm rounded-full px-8 py-4 hover:bg-amarillo/90 transition-colors"
+          class="inline-flex items-center bg-verde text-white font-heading font-semibold text-sm rounded-full px-8 py-4 hover:bg-verde/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-verde focus-visible:ring-offset-2 focus-visible:ring-offset-azul"
         >
           Agenda Asesoría Gratis &rarr;
         </a>
         <a
           href="#contacto"
-          class="inline-flex items-center gap-2 border border-white/40 text-white font-heading font-semibold text-sm rounded-full px-8 py-4 hover:bg-white/10 transition-colors"
+          class="inline-flex items-center gap-2 border border-white/40 text-white font-heading font-semibold text-sm rounded-full px-8 py-4 hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-azul"
         >
           <!-- message-circle icon -->
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -60,8 +63,15 @@
 
     <!-- Right side - Glass card (hidden on mobile) -->
     <div class="hidden lg:block w-[380px] shrink-0">
-      <div class="bg-white/[0.07] border border-white/[0.09] rounded-2xl p-8 backdrop-blur-sm">
-        <div class="flex flex-col gap-6">
+      <div id="hero-glass-card" class="bg-white/[0.3] border border-white/[0.2] rounded-2xl p-8 backdrop-blur-md relative min-h-[360px] flex flex-col justify-center overflow-hidden transition-all duration-1000">
+        
+        <!-- Animated Logo Layer -->
+        <div id="hero-animated-logo" class="absolute inset-0 flex items-center justify-center transition-opacity duration-1000 opacity-100 z-10 px-8">
+          <img src="/images/logo-opt.webp" alt="ITA Logotipo" width="240" height="240" class="w-full max-w-[240px] h-auto object-contain drop-shadow-2xl" />
+        </div>
+
+        <!-- Info List Layer -->
+        <div id="hero-info-list" class="flex flex-col gap-6 transition-all duration-1000 opacity-0 translate-y-6 pointer-events-none">
 
           <!-- Item 1: Estrategia Fiscal -->
           <div class="flex items-start gap-4">
@@ -73,7 +83,7 @@
             </div>
             <div>
               <h3 class="text-white font-heading font-semibold text-base mb-1">Estrategia Fiscal</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Planeación inteligente para optimizar tus impuestos.</p>
+              <p class="text-white/70 text-sm leading-relaxed">Planeación inteligente para optimizar tus impuestos.</p>
             </div>
           </div>
 
@@ -87,7 +97,7 @@
             </div>
             <div>
               <h3 class="text-white font-heading font-semibold text-base mb-1">Cumplimiento</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Siempre al día con tus obligaciones fiscales.</p>
+              <p class="text-white/70 text-sm leading-relaxed">Siempre al día con tus obligaciones fiscales.</p>
             </div>
           </div>
 
@@ -101,7 +111,7 @@
             </div>
             <div>
               <h3 class="text-white font-heading font-semibold text-base mb-1">Crecimiento</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Impulsamos tu empresa hacia nuevas metas.</p>
+              <p class="text-white/70 text-sm leading-relaxed">Impulsamos tu empresa hacia nuevas metas.</p>
             </div>
           </div>
 
@@ -111,3 +121,29 @@
 
   </div>
 </section>
+
+<script>
+  // Wait 2 seconds, fade out logo, fade in info list
+  setTimeout(() => {
+    const heroLogo = document.getElementById('hero-animated-logo');
+    const heroInfo = document.getElementById('hero-info-list');
+    
+    if (heroLogo && heroInfo) {
+      heroLogo.classList.remove('opacity-100');
+      heroLogo.classList.add('opacity-0');
+      
+      const heroGlassCard = document.getElementById('hero-glass-card');
+      if (heroGlassCard) {
+        heroGlassCard.classList.remove('bg-white/[0.3]', 'border-white/[0.2]', 'backdrop-blur-md');
+        heroGlassCard.classList.add('bg-white/[0.07]', 'border-white/[0.09]', 'backdrop-blur-sm');
+      }
+
+      // After fade out completes
+      setTimeout(() => {
+        heroLogo.classList.add('hidden');
+        heroInfo.classList.remove('pointer-events-none', 'opacity-0', 'translate-y-6');
+        heroInfo.classList.add('opacity-100', 'translate-y-0');
+      }, 1000); 
+    }
+  }, 2000);
+</script>

@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+
+const title = "Tu empresa necesita estados financieros 2026";
+const category = "Contabilidad";
+const time = 3;
+const date = "18 de marzo, 2026";
+---
+
+<Layout title={`${title} - Blog ITA Contadores`} description="Descubre cómo los estados financieros te ayudan a tomar mejores decisiones y acceder a créditos.">
+  <Navbar />
+  <WhatsAppButton />
+
+  <main class="pt-[100px] pb-20 px-6 md:px-16 lg:px-20">
+    <div class="max-w-3xl mx-auto">
+
+      <nav class="flex items-center gap-2 text-[13px] font-body text-gris-light mb-8">
+        <a href="/" class="hover:text-verde transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/#blog" class="hover:text-verde transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gris">{title}</span>
+      </nav>
+
+      <span class="inline-block bg-azul text-white text-[11px] font-heading font-semibold tracking-wide uppercase px-3 py-1.5 rounded-lg mb-4">
+        {category}
+      </span>
+      <h1 class="font-heading text-[28px] md:text-[36px] font-bold text-azul leading-tight mb-4">
+        {title}
+      </h1>
+      <div class="flex items-center gap-4 text-gris-light text-[13px] font-body mb-10">
+        <span>{date}</span>
+        <span>&middot;</span>
+        <span>{time} min de lectura</span>
+      </div>
+
+      <article class="space-y-6 text-[15px] font-body text-[#4B5563] leading-[1.8]">
+
+        <p>
+          Los estados financieros son mucho m&aacute;s que un requisito contable. Son la radiograf&iacute;a de la salud de tu empresa y la herramienta m&aacute;s poderosa para tomar decisiones informadas. En 2026, contar con estados financieros actualizados es m&aacute;s importante que nunca.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">&iquest;Qu&eacute; son los estados financieros?</h2>
+        <p>
+          Son documentos contables que reflejan la situaci&oacute;n econ&oacute;mica y financiera de una empresa en un periodo determinado. Los principales son:
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Balance General:</strong> Muestra lo que tienes (activos), lo que debes (pasivos) y tu patrimonio</li>
+          <li><strong>Estado de Resultados:</strong> Refleja tus ingresos, gastos y la utilidad o p&eacute;rdida del periodo</li>
+          <li><strong>Estado de Flujo de Efectivo:</strong> Detalla c&oacute;mo entra y sale el dinero de tu empresa</li>
+          <li><strong>Estado de Cambios en el Capital:</strong> Muestra c&oacute;mo ha evolucionado la inversi&oacute;n de los socios</li>
+        </ul>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">&iquest;Por qu&eacute; los necesitas en 2026?</h2>
+
+        <h3 class="font-heading text-[18px] font-bold text-azul mt-6 mb-2">Acceso a cr&eacute;ditos y financiamiento</h3>
+        <p>
+          Los bancos e instituciones financieras exigen estados financieros actualizados para evaluar solicitudes de cr&eacute;dito. Sin ellos, tu empresa queda fuera de las mejores opciones de financiamiento.
+        </p>
+
+        <h3 class="font-heading text-[18px] font-bold text-azul mt-6 mb-2">Toma de decisiones estrat&eacute;gicas</h3>
+        <p>
+          &iquest;Deber&iacute;as contratar m&aacute;s personal? &iquest;Es buen momento para invertir? &iquest;Tu margen de utilidad es saludable? Los estados financieros responden estas preguntas con datos reales, no con intuici&oacute;n.
+        </p>
+
+        <h3 class="font-heading text-[18px] font-bold text-azul mt-6 mb-2">Cumplimiento fiscal</h3>
+        <p>
+          El SAT puede solicitar tus estados financieros en cualquier momento como parte de una auditor&iacute;a o revisi&oacute;n. Tenerlos al d&iacute;a demuestra orden y reduce el riesgo de observaciones.
+        </p>
+
+        <h3 class="font-heading text-[18px] font-bold text-azul mt-6 mb-2">Atracci&oacute;n de inversionistas</h3>
+        <p>
+          Si buscas socios o inversionistas, los estados financieros son tu carta de presentaci&oacute;n. Demuestran la viabilidad y el potencial de crecimiento de tu negocio.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">Se&ntilde;ales de que necesitas actualizar tus estados financieros</h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>No sabes con certeza cu&aacute;nto gana o pierde tu empresa cada mes</li>
+          <li>Tomas decisiones financieras basadas en el saldo de tu cuenta bancaria</li>
+          <li>Un banco te ha rechazado un cr&eacute;dito por falta de documentaci&oacute;n</li>
+          <li>No puedes comparar tu rendimiento con periodos anteriores</li>
+          <li>Llevas m&aacute;s de 6 meses sin revisar tus n&uacute;meros a fondo</li>
+        </ul>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">Conclusi&oacute;n</h2>
+        <p>
+          Los estados financieros no son un gasto, son una inversi&oacute;n en la claridad y el futuro de tu empresa. En ITA Contadores generamos estados financieros claros, puntuales y &uacute;tiles para que tomes las mejores decisiones de negocio.
+        </p>
+
+        <div class="bg-verde/10 border border-verde/20 rounded-xl p-6 mt-8">
+          <p class="font-heading text-[16px] font-bold text-azul mb-2">&iquest;Necesitas estados financieros actualizados?</p>
+          <p class="text-gris text-[14px] mb-4">Podemos prepararlos en poco tiempo para que tengas claridad sobre la salud de tu empresa.</p>
+          <a href="/#contacto" class="inline-flex items-center gap-2 bg-verde text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-verde/90 transition-colors">
+            Solicitar cotizaci&oacute;n &rarr;
+          </a>
+        </div>
+      </article>
+
+      <div class="mt-12 pt-8 border-t border-border">
+        <a href="/#blog" class="inline-flex items-center gap-2 text-verde font-heading font-semibold text-[14px] hover:underline">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          Volver al blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

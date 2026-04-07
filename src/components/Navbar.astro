@@ -4,51 +4,78 @@
 
 <header
   id="navbar"
-  class="fixed top-0 left-0 w-full z-50 bg-white transition-shadow duration-300"
+  class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md transition-all duration-300 border-b border-white/20"
 >
-  <nav class="flex items-center justify-between h-[80px] px-6 lg:px-20 max-w-[1440px] mx-auto">
-    <!-- Logo -->
-    <a href="#hero" class="shrink-0">
-      <img
-        src="/images/logo-navbar.png"
-        alt="ITA Contadores"
-        class="h-[40px] w-auto"
-      />
-    </a>
+  <nav
+    class="flex items-center justify-between h-[80px] px-6 lg:px-20 max-w-[1440px] mx-auto"
+  >
+    <!-- Left Group -->
+    <div class="flex items-center gap-4 lg:gap-12 w-full lg:w-auto">
+      <!-- Logo -->
+      <a
+        href="/#hero"
+        id="navbar-logo-container"
+        class="shrink-0 flex items-center translate-y-[14px] max-lg:opacity-100 max-lg:max-w-[400px] lg:opacity-0 lg:max-w-0 overflow-hidden transition-all duration-1000 ease-in-out"
+      >
+        <img
+          id="navbar-logo"
+          src="/images/logo-navbar-blanco-opt.webp"
+          alt="ITA Contadores"
+          class="min-w-[200px] md:min-w-[240px] lg:min-w-[280px] w-[200px] md:w-[240px] lg:w-[280px] h-auto object-contain block"
+        />
+      </a>
 
-    <!-- Desktop Nav Links -->
-    <ul class="hidden lg:flex items-center gap-8 font-[Montserrat] text-[15px] font-medium">
-      <li>
-        <a href="#hero" class="text-[#4CAF7A] hover:text-[#4CAF7A] transition-colors">
-          Inicio
-        </a>
-      </li>
-      <li>
-        <a href="#servicios" class="text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
-          Servicios
-        </a>
-      </li>
-      <li>
-        <a href="#nosotros" class="text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
-          Nosotros
-        </a>
-      </li>
-      <li>
-        <a href="#blog" class="text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
-          Blog
-        </a>
-      </li>
-      <li>
-        <a href="#contacto" class="text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
-          Contacto
-        </a>
-      </li>
-    </ul>
+      <!-- Desktop Nav Links -->
+      <ul
+        class="hidden lg:flex items-center gap-8 font-heading text-[15px] font-medium transition-all duration-1000"
+      >
+        <li>
+          <a
+            href="/#hero"
+            class="nav-link text-white hover:text-verde transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-verde rounded"
+          >
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#servicios"
+            class="nav-link text-white hover:text-verde transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-verde rounded"
+          >
+            Servicios
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#nosotros"
+            class="nav-link text-white hover:text-verde transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-verde rounded"
+          >
+            Nosotros
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#blog"
+            class="nav-link text-white hover:text-verde transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-verde rounded"
+          >
+            Blog
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#contacto"
+            class="nav-link text-white hover:text-verde transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-verde rounded"
+          >
+            Contacto
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <!-- Desktop CTA Button -->
     <a
-      href="#contacto"
-      class="hidden lg:inline-flex items-center gap-2 bg-[#F2C94C] text-[#2B2A5A] font-[Montserrat] text-[15px] font-semibold rounded-full px-6 py-3 hover:bg-[#e6bc3f] transition-colors"
+      href="/#contacto"
+      class="hidden lg:inline-flex items-center gap-2 bg-verde text-white font-heading text-[14px] font-semibold rounded-full px-5 py-2.5 whitespace-nowrap shrink-0 hover:bg-verde/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-verde focus-visible:ring-offset-2"
     >
       <!-- Lucide Phone icon -->
       <svg
@@ -72,7 +99,7 @@
     <!-- Mobile Hamburger Button -->
     <button
       id="menu-toggle"
-      class="lg:hidden flex items-center justify-center w-10 h-10 text-[#4B5563]"
+      class="lg:hidden flex items-center justify-center w-10 h-10 text-white cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-verde rounded-lg"
       aria-label="Abrir menú"
     >
       <!-- Lucide Menu icon -->
@@ -117,36 +144,51 @@
     id="mobile-menu"
     class="hidden lg:hidden bg-white border-t border-gray-100 px-6 pb-6"
   >
-    <ul class="flex flex-col gap-4 pt-4 font-[Montserrat] text-[15px] font-medium">
+    <ul class="flex flex-col gap-4 pt-4 font-heading text-[15px] font-medium">
       <li>
-        <a href="#hero" class="block text-[#4CAF7A] hover:text-[#4CAF7A] transition-colors">
+        <a
+          href="/#hero"
+          class="block text-verde hover:text-verde transition-colors"
+        >
           Inicio
         </a>
       </li>
       <li>
-        <a href="#servicios" class="block text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+        <a
+          href="/#servicios"
+          class="block text-[#4B5563] hover:text-verde transition-colors"
+        >
           Servicios
         </a>
       </li>
       <li>
-        <a href="#nosotros" class="block text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+        <a
+          href="/#nosotros"
+          class="block text-[#4B5563] hover:text-verde transition-colors"
+        >
           Nosotros
         </a>
       </li>
       <li>
-        <a href="#blog" class="block text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+        <a
+          href="/#blog"
+          class="block text-[#4B5563] hover:text-verde transition-colors"
+        >
           Blog
         </a>
       </li>
       <li>
-        <a href="#contacto" class="block text-[#4B5563] hover:text-[#4CAF7A] transition-colors">
+        <a
+          href="/#contacto"
+          class="block text-[#4B5563] hover:text-verde transition-colors"
+        >
           Contacto
         </a>
       </li>
     </ul>
     <a
-      href="#contacto"
-      class="inline-flex items-center gap-2 mt-4 bg-[#F2C94C] text-[#2B2A5A] font-[Montserrat] text-[15px] font-semibold rounded-full px-6 py-3 hover:bg-[#e6bc3f] transition-colors"
+      href="/#contacto"
+      class="inline-flex items-center gap-2 mt-4 bg-verde text-white font-heading text-[15px] font-semibold rounded-full px-6 py-3 hover:bg-verde/90 transition-colors"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -168,19 +210,52 @@
   </div>
 </header>
 
-<!-- Spacer to offset fixed navbar -->
-<div class="h-[80px]"></div>
-
 <script>
-  // Shadow on scroll
+  // Navbar: transparent on hero, white after scroll
   const navbar = document.getElementById("navbar");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 10) {
-      navbar?.classList.add("shadow-md");
+  const hero = document.getElementById("hero");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const menuBtn = document.getElementById("menu-toggle");
+
+  function updateNavbar() {
+    const heroBottom = hero ? hero.offsetHeight - 80 : 500;
+    const scrolled = window.scrollY > heroBottom;
+
+    if (scrolled) {
+      navbar?.classList.remove("bg-white/10");
+      navbar?.classList.add("bg-white/85", "shadow-md");
+      const logo = document.getElementById("navbar-logo") as HTMLImageElement;
+      if (logo) logo.src = "/images/logo-navbar-opt.webp";
+      navLinks.forEach((link) => {
+        link.classList.remove("text-white");
+        link.classList.add("text-[#4B5563]");
+      });
+      menuBtn?.classList.remove("text-white");
+      menuBtn?.classList.add("text-[#4B5563]");
     } else {
-      navbar?.classList.remove("shadow-md");
+      navbar?.classList.remove("bg-white/85", "shadow-md");
+      navbar?.classList.add("bg-white/10");
+      const logo = document.getElementById("navbar-logo") as HTMLImageElement;
+      if (logo) logo.src = "/images/logo-navbar-blanco.png";
+      navLinks.forEach((link) => {
+        link.classList.remove("text-[#4B5563]");
+        link.classList.add("text-white");
+      });
+      menuBtn?.classList.remove("text-[#4B5563]");
+      menuBtn?.classList.add("text-white");
     }
-  });
+  }
+
+  window.addEventListener("scroll", updateNavbar);
+  updateNavbar();
+
+  // Sync logo animation on load — starts 0.5s before hero logo fades out for smooth overlap
+  setTimeout(() => {
+    const logoContainer = document.getElementById("navbar-logo-container");
+    if (logoContainer) {
+      logoContainer.classList.remove("lg:opacity-0", "lg:max-w-0");
+    }
+  }, 1500);
 
   // Mobile menu toggle
   const menuToggle = document.getElementById("menu-toggle");
@@ -193,7 +268,10 @@
     mobileMenu?.classList.toggle("hidden");
     iconMenu?.classList.toggle("hidden");
     iconClose?.classList.toggle("hidden");
-    menuToggle.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Abrir menú" : "Cerrar menú",
+    );
   });
 
   // Close mobile menu when a link is clicked

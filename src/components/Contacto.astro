@@ -2,164 +2,245 @@
 // Contacto.astro – Contact section with info + form
 ---
 
-<section id="contacto" class="w-full bg-white py-[80px] px-6 md:px-[80px]">
-  <div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20">
+<section id="contacto" class="reveal w-full bg-white py-16 md:py-[80px] px-6 md:px-16 lg:px-[80px]">
+  <div class="max-w-[1440px] mx-auto">
 
-    <!-- Left: Info -->
-    <div class="flex-1 lg:max-w-[45%]">
+    <!-- Header centered -->
+    <div class="text-center mb-14">
       <span
-        class="inline-block font-[Montserrat] text-[12px] font-semibold text-[#4CAF7A] tracking-widest uppercase mb-3"
+        class="inline-block font-heading text-[12px] font-semibold text-verde tracking-widest uppercase mb-3"
       >
         Contacto
       </span>
       <h2
-        class="font-[Montserrat] text-[28px] md:text-[32px] font-bold text-[#1E293B] leading-tight mb-4"
+        class="font-heading text-[28px] md:text-[36px] font-bold text-azul leading-tight mb-4"
       >
-        Hablemos de tu empresa
+        Agenda una asesor&iacute;a sin costo
       </h2>
-      <p class="text-[#64748B] text-base leading-relaxed mb-10 max-w-md">
-        Estamos listos para escucharte. Cuéntanos sobre tu negocio y juntos encontraremos la mejor estrategia fiscal y contable para ti.
+      <p class="text-gris text-base leading-relaxed max-w-lg mx-auto">
+        Descubre si est&aacute;s pagando de m&aacute;s. Nuestro equipo est&aacute; listo para ayudarte.
       </p>
-
-      <!-- Info items -->
-      <div class="flex flex-col gap-6">
-        <!-- MapPin -->
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-lg bg-[#F0FDF4] flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-          <div>
-            <p class="text-[#1E293B] text-[14px] font-semibold font-[Montserrat] mb-0.5">Dirección</p>
-            <p class="text-[#64748B] text-[14px] leading-relaxed">Hornillos #5, Col. Santa Cecilia,<br/>Tlalnepantla 54130</p>
-          </div>
-        </div>
-
-        <!-- Mail -->
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-lg bg-[#F0FDF4] flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-          </div>
-          <div>
-            <p class="text-[#1E293B] text-[14px] font-semibold font-[Montserrat] mb-0.5">Correo electrónico</p>
-            <p class="text-[#64748B] text-[14px]">mtrujillo@itacontadores.com</p>
-          </div>
-        </div>
-
-        <!-- Phone -->
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-lg bg-[#F0FDF4] flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-          </div>
-          <div>
-            <p class="text-[#1E293B] text-[14px] font-semibold font-[Montserrat] mb-0.5">Teléfono</p>
-            <p class="text-[#64748B] text-[14px]">55 59 20 23 11</p>
-          </div>
-        </div>
-
-        <!-- Clock -->
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-lg bg-[#F0FDF4] flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
-          </div>
-          <div>
-            <p class="text-[#1E293B] text-[14px] font-semibold font-[Montserrat] mb-0.5">Horario de atención</p>
-            <p class="text-[#64748B] text-[14px]">Lunes a Viernes, 9:00 AM - 6:00 PM</p>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- Right: Form -->
-    <div class="flex-1">
-      <form class="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6 md:p-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-          <!-- Nombre -->
-          <div class="flex flex-col gap-1.5">
-            <label for="nombre" class="text-[#1E293B] text-[13px] font-semibold font-[Montserrat]">Nombre</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder="Tu nombre completo"
-              class="w-full bg-white border border-[#E2E8F0] rounded-xl px-4 py-3 text-[14px] text-[#1E293B] placeholder:text-[#94A3B8] outline-none focus:border-[#4CAF7A] focus:ring-1 focus:ring-[#4CAF7A] transition-colors"
-            />
+    <!-- Two columns -->
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+
+      <!-- Left: Info -->
+      <div class="flex-1 lg:max-w-[420px]">
+        <h3 class="font-heading text-[18px] font-bold text-azul mb-6">
+          Informaci&oacute;n de contacto
+        </h3>
+
+        <!-- Info items -->
+        <div class="flex flex-col gap-5 mb-8">
+          <!-- Phone -->
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-full bg-[#F0FDF4] flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-gris-light text-[13px] font-body">Tel&eacute;fono</p>
+              <p class="text-azul text-[15px] font-heading font-semibold">55-5072-8828</p>
+            </div>
+          </div>
+
+          <!-- Mail -->
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-full bg-[#F0FDF4] flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-gris-light text-[13px] font-body">Correo electr&oacute;nico</p>
+              <p class="text-azul text-[15px] font-heading font-semibold">contacto@itacontadores.com</p>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-full bg-[#F0FDF4] flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-gris-light text-[13px] font-body">Ubicaci&oacute;n</p>
+              <p class="text-azul text-[15px] font-heading font-semibold">Ciudad de M&eacute;xico, M&eacute;xico</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp box -->
+        <a
+          href="https://wa.me/5550728828"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-4 bg-verde rounded-xl px-6 py-4 mb-4 hover:bg-verde/90 transition-colors"
+        >
+          <svg class="w-8 h-8 text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <div>
+            <p class="text-white font-heading font-bold text-[15px]">Escr&iacute;benos por WhatsApp</p>
+            <p class="text-white/80 text-[13px] font-body">Respuesta inmediata</p>
+          </div>
+        </a>
+
+        <!-- Diagnostico box -->
+        <div class="bg-verde/10 border border-verde/20 rounded-xl px-6 py-4">
+          <div class="flex items-start gap-3">
+            <span class="text-lg">&#128269;</span>
+            <div>
+              <p class="text-azul font-heading font-bold text-[15px] mb-1">Diagn&oacute;stico gratuito</p>
+              <p class="text-gris text-[13px] font-body leading-relaxed">
+                Complete el formulario y descubra si est&aacute; pagando de m&aacute;s en impuestos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="mt-6 rounded-xl overflow-hidden border border-border h-[180px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.8!2d-99.1977!3d19.5346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8a0a0a0a0a0%3A0x0!2sHornillos%205%2C%20Santa%20Cecilia%2C%20Tlalnepantla!5e0!3m2!1ses!2smx!4v1"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicaci&oacute;n de ITA Contadores"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="flex-1">
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white border border-border rounded-2xl p-6 md:p-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <!-- Nombre -->
+            <div class="flex flex-col gap-1.5">
+              <label for="nombre" class="text-azul text-[14px] font-semibold font-heading">Nombre <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+                class="w-full bg-white border border-border rounded-xl px-4 py-3 text-[14px] text-azul placeholder:text-gris-light outline-none focus:border-verde focus:ring-1 focus:ring-verde transition-colors"
+              />
+            </div>
+
+            <!-- Correo -->
+            <div class="flex flex-col gap-1.5">
+              <label for="correo" class="text-azul text-[14px] font-semibold font-heading">Correo electr&oacute;nico <span class="text-red-500">*</span></label>
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                placeholder="tu@email.com"
+                required
+                class="w-full bg-white border border-border rounded-xl px-4 py-3 text-[14px] text-azul placeholder:text-gris-light outline-none focus:border-verde focus:ring-1 focus:ring-verde transition-colors"
+              />
+            </div>
           </div>
 
           <!-- Teléfono -->
-          <div class="flex flex-col gap-1.5">
-            <label for="telefono" class="text-[#1E293B] text-[13px] font-semibold font-[Montserrat]">Teléfono</label>
+          <div class="flex flex-col gap-1.5 mb-4">
+            <label for="telefono" class="text-azul text-[14px] font-semibold font-heading">Tel&eacute;fono</label>
             <input
               type="tel"
               id="telefono"
               name="telefono"
-              placeholder="55 1234 5678"
-              class="w-full bg-white border border-[#E2E8F0] rounded-xl px-4 py-3 text-[14px] text-[#1E293B] placeholder:text-[#94A3B8] outline-none focus:border-[#4CAF7A] focus:ring-1 focus:ring-[#4CAF7A] transition-colors"
-            />
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-          <!-- Correo -->
-          <div class="flex flex-col gap-1.5">
-            <label for="correo" class="text-[#1E293B] text-[13px] font-semibold font-[Montserrat]">Correo</label>
-            <input
-              type="email"
-              id="correo"
-              name="correo"
-              placeholder="tu@empresa.com"
-              class="w-full bg-white border border-[#E2E8F0] rounded-xl px-4 py-3 text-[14px] text-[#1E293B] placeholder:text-[#94A3B8] outline-none focus:border-[#4CAF7A] focus:ring-1 focus:ring-[#4CAF7A] transition-colors"
+              placeholder="+52 55 0000 0000"
+              class="w-full bg-white border border-border rounded-xl px-4 py-3 text-[14px] text-azul placeholder:text-gris-light outline-none focus:border-verde focus:ring-1 focus:ring-verde transition-colors"
             />
           </div>
 
-          <!-- Empresa -->
-          <div class="flex flex-col gap-1.5">
-            <label for="empresa" class="text-[#1E293B] text-[13px] font-semibold font-[Montserrat]">Empresa</label>
-            <input
-              type="text"
-              id="empresa"
-              name="empresa"
-              placeholder="Nombre de tu empresa"
-              class="w-full bg-white border border-[#E2E8F0] rounded-xl px-4 py-3 text-[14px] text-[#1E293B] placeholder:text-[#94A3B8] outline-none focus:border-[#4CAF7A] focus:ring-1 focus:ring-[#4CAF7A] transition-colors"
-            />
+          <!-- Mensaje -->
+          <div class="flex flex-col gap-1.5 mb-6">
+            <label for="mensaje" class="text-azul text-[14px] font-semibold font-heading">Mensaje <span class="text-red-500">*</span></label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="5"
+              placeholder="Cu&eacute;ntanos sobre tu negocio y c&oacute;mo podemos ayudarte..."
+              required
+              class="w-full bg-white border border-border rounded-xl px-4 py-3 text-[14px] text-azul placeholder:text-gris-light outline-none focus:border-verde focus:ring-1 focus:ring-verde transition-colors resize-none"
+            ></textarea>
           </div>
-        </div>
 
-        <!-- Mensaje -->
-        <div class="flex flex-col gap-1.5 mb-6">
-          <label for="mensaje" class="text-[#1E293B] text-[13px] font-semibold font-[Montserrat]">Mensaje</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            rows="4"
-            placeholder="Cuéntanos cómo podemos ayudarte..."
-            class="w-full bg-white border border-[#E2E8F0] rounded-xl px-4 py-3 text-[14px] text-[#1E293B] placeholder:text-[#94A3B8] outline-none focus:border-[#4CAF7A] focus:ring-1 focus:ring-[#4CAF7A] transition-colors resize-none"
-          ></textarea>
-        </div>
+          <!-- Submit -->
+          <button
+            type="submit"
+            class="w-full bg-azul hover:bg-azul-light text-white font-heading font-semibold text-[15px] py-4 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-verde focus-visible:ring-offset-2"
+          >
+            Enviar mensaje
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
 
-        <!-- Submit -->
-        <button
-          type="submit"
-          class="w-full bg-[#2B2A5A] hover:bg-[#363473] text-white font-[Montserrat] font-semibold text-[15px] py-3.5 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2"
-        >
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="22" y1="2" x2="11" y2="13"/>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-          </svg>
-          Enviar Mensaje
-        </button>
-      </form>
+          <!-- Success message -->
+          <div id="form-success" class="hidden bg-verde/10 border border-verde/20 rounded-xl p-4 text-center">
+            <p class="text-verde font-heading font-bold text-[15px] mb-1">&#10003; Mensaje enviado</p>
+            <p class="text-gris text-[13px] font-body">Nos pondremos en contacto contigo pronto.</p>
+          </div>
+
+          <!-- Error message -->
+          <div id="form-error" class="hidden bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+            <p class="text-red-600 font-heading font-bold text-[15px] mb-1">Error al enviar</p>
+            <p class="text-gris text-[13px] font-body">Int&eacute;ntalo de nuevo o cont&aacute;ctanos por WhatsApp.</p>
+          </div>
+
+          <!-- Disclaimer -->
+          <p class="text-gris-light text-[12px] font-body text-center mt-4">
+            Al enviar, aceptas que nos contactemos contigo para brindarte informaci&oacute;n.
+          </p>
+        </form>
+      </div>
+
     </div>
-
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const successMsg = document.getElementById("form-success")!;
+  const errorMsg = document.getElementById("form-error")!;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalHTML = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="animate-pulse">Enviando...</span>';
+    successMsg.classList.add("hidden");
+    errorMsg.classList.add("hidden");
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        form.reset();
+        successMsg.classList.remove("hidden");
+      } else {
+        errorMsg.classList.remove("hidden");
+      }
+    } catch {
+      errorMsg.classList.remove("hidden");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalHTML;
+    }
+  });
+</script>

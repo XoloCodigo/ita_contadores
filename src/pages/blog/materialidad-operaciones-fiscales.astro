@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+
+const title = "Materialidad de las operaciones fiscales";
+const category = "Estrategia";
+const time = 5;
+const date = "25 de marzo, 2026";
+---
+
+<Layout title={`${title} - Blog ITA Contadores`} description="Estrategias fiscales 100% legales que muchas empresas desconocen y que pueden ahorrarte miles de pesos.">
+  <Navbar />
+  <WhatsAppButton />
+
+  <main class="pt-[100px] pb-20 px-6 md:px-16 lg:px-20">
+    <div class="max-w-3xl mx-auto">
+
+      <nav class="flex items-center gap-2 text-[13px] font-body text-gris-light mb-8">
+        <a href="/" class="hover:text-verde transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/#blog" class="hover:text-verde transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gris">{title}</span>
+      </nav>
+
+      <span class="inline-block bg-azul text-white text-[11px] font-heading font-semibold tracking-wide uppercase px-3 py-1.5 rounded-lg mb-4">
+        {category}
+      </span>
+      <h1 class="font-heading text-[28px] md:text-[36px] font-bold text-azul leading-tight mb-4">
+        {title}
+      </h1>
+      <div class="flex items-center gap-4 text-gris-light text-[13px] font-body mb-10">
+        <span>{date}</span>
+        <span>&middot;</span>
+        <span>{time} min de lectura</span>
+      </div>
+
+      <article class="space-y-6 text-[15px] font-body text-[#4B5563] leading-[1.8]">
+
+        <p>
+          La materialidad de las operaciones fiscales se ha convertido en uno de los temas m&aacute;s relevantes en la fiscalizaci&oacute;n mexicana. El SAT ha intensificado sus revisiones para verificar que las operaciones declaradas por los contribuyentes sean reales, tengan sustancia econ&oacute;mica y est&eacute;n debidamente documentadas.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">&iquest;Qu&eacute; es la materialidad fiscal?</h2>
+        <p>
+          La materialidad se refiere a la capacidad de demostrar que una operaci&oacute;n comercial realmente ocurri&oacute;. No basta con tener una factura; es necesario contar con evidencia de que el servicio se prest&oacute;, el producto se entreg&oacute; o la transacci&oacute;n tuvo un prop&oacute;sito de negocio leg&iacute;timo.
+        </p>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">&iquest;Por qu&eacute; es tan importante?</h2>
+        <p>
+          El SAT puede rechazar la deducci&oacute;n de gastos y el acreditamiento de IVA si no se puede comprobar la materialidad de las operaciones. Esto significa que, aunque tengas la factura, podr&iacute;as terminar pagando impuestos adicionales, multas y recargos.
+        </p>
+        <p>Las consecuencias incluyen:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Rechazo de deducciones fiscales</li>
+          <li>No acreditamiento del IVA</li>
+          <li>Multas del 55% al 75% de las contribuciones omitidas</li>
+          <li>Posible inclusi&oacute;n en la lista negra del SAT (Art. 69-B del CFF)</li>
+        </ul>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">&iquest;C&oacute;mo demostrar la materialidad?</h2>
+        <p>Para cada operaci&oacute;n significativa, es recomendable conservar:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Contratos</strong> firmados entre las partes</li>
+          <li><strong>Evidencia de entrega</strong> (gu&iacute;as de env&iacute;o, acuses, fotos)</li>
+          <li><strong>Comprobantes de pago</strong> (transferencias, estados de cuenta)</li>
+          <li><strong>Comunicaciones</strong> (correos, &oacute;rdenes de compra)</li>
+          <li><strong>Entregables</strong> (reportes, archivos, productos terminados)</li>
+          <li><strong>Registro contable</strong> adecuado de la operaci&oacute;n</li>
+        </ul>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">Operaciones que el SAT revisa con lupa</h2>
+        <p>Algunas operaciones son revisadas con mayor escrutinio:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Servicios profesionales y de consultor&iacute;a (intangibles)</li>
+          <li>Operaciones entre partes relacionadas</li>
+          <li>Subcontrataci&oacute;n de personal</li>
+          <li>Operaciones con proveedores en la lista 69-B</li>
+          <li>Gastos que parecen desproporcionados al giro del negocio</li>
+        </ul>
+
+        <h2 class="font-heading text-[22px] font-bold text-azul mt-8 mb-3">Recomendaciones pr&aacute;cticas</h2>
+        <p>
+          La mejor defensa es la prevenci&oacute;n. Implementa procesos internos que documenten cada operaci&oacute;n desde el inicio. No esperes a que el SAT te requiera informaci&oacute;n para empezar a organizar tu evidencia.
+        </p>
+        <p>
+          En ITA Contadores ayudamos a nuestros clientes a estructurar sus procesos de documentaci&oacute;n fiscal para que cada deducci&oacute;n est&eacute; blindada ante cualquier revisi&oacute;n.
+        </p>
+
+        <div class="bg-verde/10 border border-verde/20 rounded-xl p-6 mt-8">
+          <p class="font-heading text-[16px] font-bold text-azul mb-2">&iquest;Tus operaciones est&aacute;n bien documentadas?</p>
+          <p class="text-gris text-[14px] mb-4">Podemos revisar tu situaci&oacute;n y ayudarte a blindar tus deducciones fiscales.</p>
+          <a href="/#contacto" class="inline-flex items-center gap-2 bg-verde text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-verde/90 transition-colors">
+            Solicitar revisi&oacute;n fiscal &rarr;
+          </a>
+        </div>
+      </article>
+
+      <div class="mt-12 pt-8 border-t border-border">
+        <a href="/#blog" class="inline-flex items-center gap-2 text-verde font-heading font-semibold text-[14px] hover:underline">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          Volver al blog
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

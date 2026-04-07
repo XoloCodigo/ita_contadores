@@ -3,7 +3,7 @@
 const portals = [
   {
     name: "SAT",
-    desc: "Servicio de Administración Tributaria. Declaraciones, facturación y trámites fiscales.",
+    desc: "Declaraciones, RFC, facturas y trámites fiscales",
     url: "sat.gob.mx",
     href: "https://www.sat.gob.mx",
     color: "#B91C1C",
@@ -12,7 +12,7 @@ const portals = [
   },
   {
     name: "IMSS",
-    desc: "Instituto Mexicano del Seguro Social. Altas, bajas y movimientos de empleados.",
+    desc: "Seguridad social, afiliación y trámites de nómina",
     url: "imss.gob.mx",
     href: "https://www.imss.gob.mx",
     color: "#047857",
@@ -21,7 +21,7 @@ const portals = [
   },
   {
     name: "INFONAVIT",
-    desc: "Instituto del Fondo Nacional de la Vivienda. Aportaciones y créditos de vivienda.",
+    desc: "Créditos de vivienda y aportaciones patronales",
     url: "infonavit.org.mx",
     href: "https://www.infonavit.org.mx",
     color: "#0369A1",
@@ -30,7 +30,7 @@ const portals = [
   },
   {
     name: "DOF",
-    desc: "Diario Oficial de la Federación. Publicaciones legales y normativas vigentes.",
+    desc: "Leyes, decretos y normatividad oficial vigentes",
     url: "dof.gob.mx",
     href: "https://www.dof.gob.mx",
     color: "#7C3AED",
@@ -39,7 +39,7 @@ const portals = [
   },
   {
     name: "SE",
-    desc: "Secretaría de Economía. Programas de apoyo, regulación comercial y trámites empresariales.",
+    desc: "Constitución de empresas y trámites empresariales",
     url: "economia.gob.mx",
     href: "https://www.economia.gob.mx",
     color: "#B45309",
@@ -48,7 +48,7 @@ const portals = [
   },
   {
     name: "STPS",
-    desc: "Secretaría del Trabajo y Previsión Social. Normatividad laboral y obligaciones patronales.",
+    desc: "Legislación laboral, contratos y normatividad",
     url: "stps.gob.mx",
     href: "https://www.stps.gob.mx",
     color: "#0E7490",
@@ -57,7 +57,7 @@ const portals = [
   },
   {
     name: "BANXICO",
-    desc: "Banco de México. Tipos de cambio, indicadores económicos y política monetaria.",
+    desc: "Tipos de cambio, tasas de interés e indicadores económicos",
     url: "banxico.org.mx",
     href: "https://www.banxico.org.mx",
     color: "#059669",
@@ -66,9 +66,9 @@ const portals = [
   },
   {
     name: "SAT PyS",
-    desc: "Portal de Pagos y Servicios del SAT. Generación de líneas de captura y pagos en línea.",
-    url: "pys.sat.gob.mx",
-    href: "https://pys.sat.gob.mx",
+    desc: "Catálogo oficial de productos y servicios para facturación CFDI",
+    url: "http://pys.sat.gob.mx/PyS/catPyS.aspx",
+    href: "http://pys.sat.gob.mx/PyS/catPyS.aspx",
     color: "#DC2626",
     bg: "#FEF2F2",
     icon: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>`,
@@ -76,33 +76,33 @@ const portals = [
 ];
 ---
 
-<section class="w-full bg-white py-[80px] px-6 md:px-[80px]">
+<section class="w-full bg-white py-16 md:py-[80px] px-6 md:px-16 lg:px-[80px]">
   <div class="max-w-[1440px] mx-auto">
     <!-- Header -->
     <div class="text-center mb-14">
       <span
-        class="inline-block font-[Montserrat] text-[12px] font-semibold text-[#4CAF7A] tracking-widest uppercase mb-3"
+        class="inline-block font-heading text-[12px] font-semibold text-verde tracking-widest uppercase mb-3"
       >
         Recursos oficiales
       </span>
       <h2
-        class="font-[Montserrat] text-[28px] md:text-[38px] font-bold text-[#1E293B] leading-tight mb-4"
+        class="font-heading text-[28px] md:text-[38px] font-bold text-azul leading-tight mb-4"
       >
         Portales del gobierno
       </h2>
-      <p class="text-[#64748B] text-base md:text-lg max-w-2xl mx-auto">
-        Accede directamente a los portales oficiales que necesitas para tus trámites fiscales, laborales y financieros.
+      <p class="text-gris text-base md:text-lg max-w-2xl mx-auto">
+        Acceso directo a las plataformas oficiales que m&aacute;s utilizan las empresas en M&eacute;xico.
       </p>
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      {portals.map((p) => (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="portals-grid">
+      {portals.map((p, index) => (
         <a
           href={p.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="group block bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:border-[#CBD5E1] hover:-translate-y-1"
+          class={`portal-card group block bg-bg border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:border-[#CBD5E1] hover:-translate-y-1 ${index >= 4 ? 'hidden md:block' : ''}`}
         >
           <!-- Top row: icon + external link -->
           <div class="flex items-center justify-between mb-4">
@@ -113,7 +113,7 @@ const portals = [
               <Fragment set:html={p.icon} />
             </div>
             <svg
-              class="w-4 h-4 text-[#94A3B8] group-hover:text-[#64748B] transition-colors"
+              class="w-4 h-4 text-gris-light group-hover:text-gris transition-colors"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -129,7 +129,7 @@ const portals = [
 
           <!-- Name badge -->
           <span
-            class="inline-block text-[13px] font-semibold font-[Montserrat] rounded-md px-3 py-1 mb-3"
+            class="inline-block text-[13px] font-semibold font-heading rounded-md px-3 py-1 mb-3"
             style={`background: ${p.bg}; color: ${p.color};`}
           >
             {p.name}
@@ -141,11 +141,62 @@ const portals = [
           </p>
 
           <!-- URL -->
-          <span class="text-[#94A3B8] text-[12px] font-medium">
+          <span class="text-gris-light text-[12px] font-medium">
             {p.url}
           </span>
         </a>
       ))}
     </div>
+
+    <!-- Mostrar más (Mobile only) -->
+    <div class="mt-8 text-center md:hidden" id="show-more-container">
+      <button id="show-more-btn" class="inline-flex items-center gap-2 bg-white border border-border text-azul font-heading font-semibold text-[14px] px-6 py-3 rounded-full hover:bg-bg transition-colors cursor-pointer">
+        <span id="show-more-text">Mostrar más portales</span>
+        <svg id="show-more-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+    </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const showMoreBtn = document.getElementById('show-more-btn');
+    const btnText = document.getElementById('show-more-text');
+    const btnIcon = document.getElementById('show-more-icon');
+    const grid = document.getElementById('portals-grid');
+    const cards = document.querySelectorAll('.portal-card');
+    let isExpanded = false;
+
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener('click', () => {
+        isExpanded = !isExpanded;
+        
+        if (isExpanded) {
+          // Show all
+          cards.forEach((card, index) => {
+            if (index >= 4) card.classList.remove('hidden');
+          });
+          if (btnText) btnText.textContent = "Mostrar menos portales";
+          if (btnIcon) btnIcon.innerHTML = '<path d="m18 15-6-6-6 6"/>';
+        } else {
+          // Hide
+          cards.forEach((card, index) => {
+            if (index >= 4) {
+              card.classList.add('hidden');
+              // Ensure it still has md:block for desktop resizing
+              if (!card.classList.contains('md:block')) card.classList.add('md:block');
+            }
+          });
+          if (btnText) btnText.textContent = "Mostrar más portales";
+          if (btnIcon) btnIcon.innerHTML = '<path d="m6 9 6 6 6-6"/>';
+          
+          // Maintain scroll position smoothly so user isn't lost
+          if (grid) {
+            const y = grid.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }
+      });
+    }
+  });
+</script>

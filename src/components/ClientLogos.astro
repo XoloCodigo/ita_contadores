@@ -1,20 +1,21 @@
 ---
 // ClientLogos.astro – Infinite marquee of client logos
 const logos = [
-  "1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg",
-  "6.png", "7.jpg", "8.jpeg", "9.png", "10.jpg",
-  "11.png", "12.png", "13.jpg", "14.jpg", "15.jpg",
-  "17.jpg", "18.jpg", "19.jpg", "20.jpg", "21.jpg",
+  "1.webp", "2.webp", "3.webp", "4.webp", "5.webp",
+  "6.webp", "7.webp", "8.webp", "9.webp", "10.webp",
+  "11.webp", "12.webp", "13.webp", "14.webp", "15.webp",
+  "17.webp", "18.webp", "19.webp", "20.webp", "21.webp",
 ];
 ---
 
 <section class="w-full bg-white py-12 px-6 md:px-20 overflow-hidden">
   <!-- Title -->
-  <h2
-    class="text-center font-[Montserrat] text-[12px] font-semibold tracking-widest text-[#94A3B8] mb-10"
+  <p
+    class="text-center font-heading text-[12px] font-semibold tracking-widest text-gris-light mb-10 uppercase"
+    aria-label="Empresas que confían en nosotros"
   >
     EMPRESAS QUE CONFÍAN EN NOSOTROS
-  </h2>
+  </p>
 
   <!-- Marquee wrapper -->
   <div class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
@@ -23,18 +24,24 @@ const logos = [
       {logos.map((file) => (
         <img
           src={`/images/clientes/${file}`}
-          alt="Cliente"
-          class="h-[50px] w-auto object-contain grayscale opacity-70 shrink-0"
-          loading="lazy"
+          alt="Logo de empresa cliente"
+          width="100"
+          height="50"
+          loading="eager"
+          decoding="async"
+          class="h-[50px] w-[100px] min-w-[100px] object-contain shrink-0"
         />
       ))}
       {/* Duplicate set for seamless loop */}
       {logos.map((file) => (
         <img
           src={`/images/clientes/${file}`}
-          alt="Cliente"
-          class="h-[50px] w-auto object-contain grayscale opacity-70 shrink-0"
-          loading="lazy"
+          alt="Logo de empresa cliente"
+          width="100"
+          height="50"
+          loading="eager"
+          decoding="async"
+          class="h-[50px] w-[100px] min-w-[100px] object-contain shrink-0"
         />
       ))}
     </div>
@@ -44,14 +51,15 @@ const logos = [
 <style>
   .marquee-track {
     animation: marquee 30s linear infinite;
+    will-change: transform;
   }
 
   @keyframes marquee {
-    0% {
-      transform: translateX(0);
+    from {
+      transform: translate3d(0, 0, 0);
     }
-    100% {
-      transform: translateX(-50%);
+    to {
+      transform: translate3d(-50%, 0, 0);
     }
   }
 

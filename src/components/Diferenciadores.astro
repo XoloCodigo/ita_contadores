@@ -4,89 +4,90 @@ const cards = [
   {
     icon: "award",
     title: "14+ años impulsando negocios",
-    desc: "Más de una década ayudando a empresas a crecer con solidez financiera y cumplimiento fiscal impecable.",
+    desc: "Experiencia comprobada en empresas de todos los tamaños y sectores.",
   },
   {
     icon: "zap",
     title: "Atención inmediata y personalizada",
-    desc: "Respondemos en menos de 24 horas porque sabemos que tu tiempo y tus decisiones no pueden esperar.",
+    desc: "Respondemos rápido porque entendemos que tu negocio no puede esperar.",
   },
   {
     icon: "target",
     title: "Estrategias a la medida",
-    desc: "Cada negocio es único. Diseñamos planes contables y fiscales adaptados a tu industria y objetivos.",
+    desc: "No usamos plantillas genéricas. Cada solución está diseñada para tu realidad.",
   },
   {
     icon: "eye",
     title: "Visión financiera a largo plazo",
-    desc: "No solo resolvemos el presente: te acompañamos con proyecciones y estrategias para un crecimiento sostenible.",
+    desc: "No solo cumplimos: planificamos contigo el futuro de tu empresa.",
   },
 ];
 ---
 
 <section
-  class="w-full py-[80px] px-6 md:px-[120px]"
-  style="background: linear-gradient(135deg, #2B2A5A 0%, #363473 100%);"
+  class="w-full py-16 md:py-[80px] px-6 md:px-16 lg:px-[120px] bg-linear-to-br from-azul to-azul-light"
 >
   <div class="max-w-[1440px] mx-auto">
     <!-- Header -->
     <div class="text-center mb-14">
       <span
-        class="inline-block font-[Montserrat] text-[12px] font-semibold text-[#4CAF7A] tracking-widest uppercase mb-3"
+        class="inline-block font-heading text-[12px] font-semibold text-verde tracking-widest uppercase mb-3"
       >
         &iquest;Por qu&eacute; elegirnos?
       </span>
       <h2
-        class="font-[Montserrat] text-[28px] md:text-[38px] font-bold italic text-white leading-tight mb-4"
+        class="font-heading text-[28px] md:text-[38px] font-bold text-white leading-tight mb-4"
       >
         Lo que nos hace diferentes
       </h2>
-      <p class="font-[Open_Sans] text-[16px] text-white/70 max-w-[600px] mx-auto">
-        Descubre las razones por las que nuestros clientes conf&iacute;an en nosotros para hacer crecer sus negocios.
+      <p class="font-body text-[16px] text-white/70 max-w-[600px] mx-auto">
+        M&aacute;s que cumplir, te ayudamos a crecer con soluciones que realmente transforman tu negocio.
       </p>
     </div>
 
     <!-- Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       {cards.map((card) => (
-        <div class="flex flex-col items-center text-center">
+        <div class="flex flex-row md:flex-col items-center md:items-center text-left md:text-center gap-5 md:gap-0">
           <!-- Icon Box -->
-          <div class="w-[64px] h-[64px] rounded-2xl bg-white/10 flex items-center justify-center mb-5">
+          <div class="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-2xl bg-white/10 flex items-center justify-center shrink-0 mb-0 md:mb-5">
             {card.icon === "award" && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-verde">
                 <circle cx="12" cy="8" r="6"></circle>
                 <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
               </svg>
             )}
             {card.icon === "zap" && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-verde">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
               </svg>
             )}
             {card.icon === "target" && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-verde">
                 <circle cx="12" cy="12" r="10"></circle>
                 <circle cx="12" cy="12" r="6"></circle>
                 <circle cx="12" cy="12" r="2"></circle>
               </svg>
             )}
             {card.icon === "eye" && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-verde">
                 <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
             )}
           </div>
 
-          <!-- Title -->
-          <h3 class="font-[Montserrat] text-[16px] font-bold text-white mb-2">
-            {card.title}
-          </h3>
+          <div class="flex-1">
+            <!-- Title -->
+            <h3 class="font-heading text-[15px] md:text-[16px] font-bold text-white mb-1 md:mb-2 leading-snug">
+              {card.title}
+            </h3>
 
-          <!-- Description -->
-          <p class="font-[Open_Sans] text-[13px] text-white/50 leading-relaxed max-w-[240px]">
-            {card.desc}
-          </p>
+            <!-- Description -->
+            <p class="font-body text-[13px] text-white/60 leading-relaxed max-w-[260px] md:mx-auto">
+              {card.desc}
+            </p>
+          </div>
         </div>
       ))}
     </div>

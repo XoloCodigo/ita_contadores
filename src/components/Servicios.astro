@@ -2,90 +2,104 @@
 // Servicios.astro – ITA Contadores services section with tabs
 ---
 
-<section id="servicios" class="bg-[#F8FAFC] py-20 px-6 lg:px-20">
+<section id="servicios" class="reveal bg-bg py-20 px-6 lg:px-20">
   <div class="max-w-[1440px] mx-auto">
     <!-- Header -->
     <div class="text-center mb-14">
       <span
-        class="inline-block font-[Montserrat] text-[12px] font-semibold text-[#4CAF7A] tracking-widest uppercase mb-3"
+        class="inline-block font-heading text-[12px] font-semibold text-verde tracking-widest uppercase mb-3"
       >
         SERVICIOS
       </span>
-      <h2 class="font-[Montserrat] text-[28px] md:text-[38px] font-bold italic text-[#2B2A5A] leading-tight mb-4">
+      <h2 class="font-heading text-[28px] md:text-[38px] font-bold text-azul leading-tight mb-4">
         Soluciones integrales para tu negocio
       </h2>
-      <p class="font-['Open_Sans'] text-[16px] text-[#64748B] max-w-2xl mx-auto">
-        Ofrecemos un ecosistema completo de servicios dise&ntilde;ados para impulsar el crecimiento y la estabilidad de tu empresa.
+      <p class="font-body text-[16px] text-gris max-w-2xl mx-auto">
+        Ofrecemos un ecosistema completo de servicios financieros y administrativos para impulsar el crecimiento de tu empresa.
       </p>
     </div>
 
     <!-- Tabs + Content -->
     <div class="flex flex-col lg:flex-row gap-8">
       <!-- Left: Tab buttons -->
-      <div class="flex flex-col gap-3 w-full lg:w-[380px] shrink-0">
+      <div class="grid grid-cols-2 lg:flex lg:flex-col gap-3 w-full lg:w-[380px] shrink-0">
         <!-- Tab 0: Fiscal -->
         <button
           data-tab="0"
-          class="srv-tab srv-tab-active flex items-center gap-4 w-full rounded-2xl p-5 text-left transition-all duration-200 border bg-[#2B2A5A] border-[#2B2A5A]"
+          class="srv-tab srv-tab-active flex flex-col lg:flex-row items-center gap-2 lg:gap-4 w-full rounded-2xl p-4 lg:p-5 text-center lg:text-left transition-all duration-200 border bg-azul border-azul"
         >
-          <div class="w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0 bg-[#3D3C6E]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
-              <path d="M13 5v2"></path>
-              <path d="M13 17v2"></path>
-              <path d="M13 11v2"></path>
+          <div class="icon-wrapper w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0 mx-auto lg:mx-0 transition-colors">
+            <svg class="icon-svg transition-colors" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="M16 13H8"></path>
+              <path d="M16 17H8"></path>
+              <path d="M10 9H8"></path>
             </svg>
           </div>
           <div>
-            <h3 class="font-[Montserrat] text-[16px] font-bold text-white">Fiscal</h3>
-            <p class="font-['Open_Sans'] text-[13px] text-white/70">4 servicios disponibles</p>
+            <h3 class="font-heading text-[15px] lg:text-[16px] font-bold text-white">Fiscal</h3>
+            <p class="font-body text-[13px] text-white/70 hidden lg:block">4 servicios disponibles</p>
+          </div>
+          <div class="ml-auto hidden lg:block">
+            <svg class="tab-chevron text-white" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
           </div>
         </button>
 
         <!-- Tab 1: Contabilidad -->
         <button
           data-tab="1"
-          class="srv-tab flex items-center gap-4 w-full rounded-2xl p-5 text-left transition-all duration-200 border bg-white border-[#E2E8F0]"
+          class="srv-tab flex flex-col lg:flex-row items-center gap-2 lg:gap-4 w-full rounded-2xl p-4 lg:p-5 text-center lg:text-left transition-all duration-200 border bg-white border-border"
         >
-          <div class="w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0 bg-[#FEF3C7]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path>
-              <path d="M14 8H8"></path>
-              <path d="M16 12H8"></path>
-              <path d="M13 16H8"></path>
+          <div class="icon-wrapper w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0 mx-auto lg:mx-0 transition-colors">
+            <svg class="icon-svg transition-colors" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 20V10M12 20V4M6 20v-6"></path>
             </svg>
           </div>
           <div>
-            <h3 class="font-[Montserrat] text-[16px] font-bold text-[#2B2A5A]">Contabilidad</h3>
-            <p class="font-['Open_Sans'] text-[13px] text-[#64748B]">4 servicios disponibles</p>
+            <h3 class="font-heading text-[15px] lg:text-[16px] font-bold text-[#1F2937]">Contabilidad</h3>
+            <p class="font-body text-[13px] text-gris hidden lg:block">4 servicios disponibles</p>
+          </div>
+          <div class="ml-auto hidden lg:block">
+            <svg class="tab-chevron text-[#6B7280]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
           </div>
         </button>
 
         <!-- Tab 2: Administrativo -->
         <button
           data-tab="2"
-          class="srv-tab flex items-center gap-4 w-full rounded-2xl p-5 text-left transition-all duration-200 border bg-white border-[#E2E8F0]"
+          class="srv-tab flex flex-col lg:flex-row items-center gap-2 lg:gap-4 w-full rounded-2xl p-4 lg:p-5 text-center lg:text-left transition-all duration-200 border bg-white border-border"
         >
-          <div class="w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0 bg-[#DBEAFE]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-              <path d="M3 9h18"></path>
-              <path d="M9 21V9"></path>
+          <div class="icon-wrapper w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0 mx-auto lg:mx-0 transition-colors">
+            <svg class="icon-svg transition-colors" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="8" height="18" x="3" y="3" rx="2"></rect>
+              <path d="M11 3h8a2 2 0 0 1 2 2v16H11"></path>
+              <path d="M15 8h2"></path>
+              <path d="M15 12h2"></path>
             </svg>
           </div>
           <div>
-            <h3 class="font-[Montserrat] text-[16px] font-bold text-[#2B2A5A]">Administrativo</h3>
-            <p class="font-['Open_Sans'] text-[13px] text-[#64748B]">4 servicios disponibles</p>
+            <h3 class="font-heading text-[15px] lg:text-[16px] font-bold text-[#1F2937]">Administrativo</h3>
+            <p class="font-body text-[13px] text-gris hidden lg:block">4 servicios disponibles</p>
+          </div>
+          <div class="ml-auto hidden lg:block">
+            <svg class="tab-chevron text-[#6B7280]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
           </div>
         </button>
 
         <!-- Tab 3: Alianzas -->
         <button
           data-tab="3"
-          class="srv-tab flex items-center gap-4 w-full rounded-2xl p-5 text-left transition-all duration-200 border bg-white border-[#E2E8F0]"
+          class="srv-tab flex flex-col lg:flex-row items-center gap-2 lg:gap-4 w-full rounded-2xl p-4 lg:p-5 text-center lg:text-left transition-all duration-200 border bg-white border-border"
         >
-          <div class="w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0 bg-[#F3E8FF]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="icon-wrapper w-[48px] h-[48px] rounded-xl flex items-center justify-center shrink-0 mx-auto lg:mx-0 transition-colors">
+            <svg class="icon-svg transition-colors" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="m11 17 2 2a1 1 0 1 0 3-3"></path>
               <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path>
               <path d="m21 3 1 11h-2"></path>
@@ -94,8 +108,13 @@
             </svg>
           </div>
           <div>
-            <h3 class="font-[Montserrat] text-[16px] font-bold text-[#2B2A5A]">Alianzas</h3>
-            <p class="font-['Open_Sans'] text-[13px] text-[#64748B]">4 servicios disponibles</p>
+            <h3 class="font-heading text-[15px] lg:text-[16px] font-bold text-[#1F2937]">Alianzas</h3>
+            <p class="font-body text-[13px] text-gris hidden lg:block">4 servicios disponibles</p>
+          </div>
+          <div class="ml-auto hidden lg:block">
+            <svg class="tab-chevron text-[#6B7280]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
           </div>
         </button>
       </div>
@@ -104,7 +123,7 @@
       <div class="flex-1 min-w-0">
         <!-- Panel 0: Fiscal -->
         <div data-panel="0" class="srv-panel">
-          <div class="bg-white rounded-2xl border border-[#E2E8F0] p-8 lg:p-10">
+          <div class="bg-white rounded-2xl border border-border p-8 lg:p-10">
             <div class="flex items-center gap-4 mb-5">
               <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center bg-[#EEEEF5]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2B2A5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -114,30 +133,30 @@
                   <path d="M13 11v2"></path>
                 </svg>
               </div>
-              <h3 class="font-[Montserrat] text-[22px] font-bold text-[#2B2A5A]">Servicios Fiscales</h3>
+              <h3 class="font-heading text-[22px] font-bold text-azul">Fiscal</h3>
             </div>
-            <p class="font-['Open_Sans'] text-[15px] text-[#64748B] leading-relaxed mb-8">
-              Te ayudamos a cumplir con todas tus obligaciones tributarias de forma eficiente, evitando multas y recargos. Nuestro equipo se mantiene actualizado con los cambios en la legislaci&oacute;n fiscal.
+            <p class="font-body text-[15px] text-gris leading-relaxed mb-8">
+              Cumplimiento y estrategia fiscal para proteger y hacer crecer tu patrimonio.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Declaraciones mensuales y anuales</span>
+                <span class="font-body text-[14px] text-azul font-medium">Declaraciones fiscales</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Planeaci&oacute;n fiscal estrat&eacute;gica</span>
+                <span class="font-body text-[14px] text-azul font-medium">Estrategias de optimizaci&oacute;n fiscal</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Auditor&iacute;as y dict&aacute;menes</span>
+                <span class="font-body text-[14px] text-azul font-medium">Devoluciones de impuestos</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Defensa fiscal ante el SAT</span>
+                <span class="font-body text-[14px] text-azul font-medium">Planeaci&oacute;n tributaria</span>
               </div>
             </div>
-            <a href="#contacto" class="inline-flex items-center gap-2 font-[Montserrat] text-[14px] font-semibold text-[#4CAF7A] hover:text-[#3d9466] transition-colors">
+            <a href="#contacto" class="inline-flex items-center gap-2 font-heading text-[14px] font-semibold text-verde hover:text-[#3d9466] transition-colors">
               Solicitar informaci&oacute;n
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -146,7 +165,7 @@
 
         <!-- Panel 1: Contabilidad -->
         <div data-panel="1" class="srv-panel hidden">
-          <div class="bg-white rounded-2xl border border-[#E2E8F0] p-8 lg:p-10">
+          <div class="bg-white rounded-2xl border border-border p-8 lg:p-10">
             <div class="flex items-center gap-4 mb-5">
               <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center bg-[#FEF3C7]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -156,30 +175,30 @@
                   <path d="M13 16H8"></path>
                 </svg>
               </div>
-              <h3 class="font-[Montserrat] text-[22px] font-bold text-[#2B2A5A]">Servicios de Contabilidad</h3>
+              <h3 class="font-heading text-[22px] font-bold text-azul">Contabilidad</h3>
             </div>
-            <p class="font-['Open_Sans'] text-[15px] text-[#64748B] leading-relaxed mb-8">
-              Llevamos el registro puntual de todas tus operaciones financieras, generando informaci&oacute;n confiable para la toma de decisiones estrat&eacute;gicas de tu negocio.
+            <p class="font-body text-[15px] text-gris leading-relaxed mb-8">
+              Control financiero preciso con herramientas digitales de &uacute;ltima generaci&oacute;n.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Contabilidad general</span>
+                <span class="font-body text-[14px] text-azul font-medium">Estados financieros</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Estados financieros</span>
+                <span class="font-body text-[14px] text-azul font-medium">Control contable digital</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Conciliaciones bancarias</span>
+                <span class="font-body text-[14px] text-azul font-medium">N&oacute;minas y seguridad social</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Reportes mensuales</span>
+                <span class="font-body text-[14px] text-azul font-medium">Informes ejecutivos</span>
               </div>
             </div>
-            <a href="#contacto" class="inline-flex items-center gap-2 font-[Montserrat] text-[14px] font-semibold text-[#4CAF7A] hover:text-[#3d9466] transition-colors">
+            <a href="#contacto" class="inline-flex items-center gap-2 font-heading text-[14px] font-semibold text-verde hover:text-[#3d9466] transition-colors">
               Solicitar informaci&oacute;n
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -188,7 +207,7 @@
 
         <!-- Panel 2: Administrativo -->
         <div data-panel="2" class="srv-panel hidden">
-          <div class="bg-white rounded-2xl border border-[#E2E8F0] p-8 lg:p-10">
+          <div class="bg-white rounded-2xl border border-border p-8 lg:p-10">
             <div class="flex items-center gap-4 mb-5">
               <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center bg-[#DBEAFE]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -197,30 +216,30 @@
                   <path d="M9 21V9"></path>
                 </svg>
               </div>
-              <h3 class="font-[Montserrat] text-[22px] font-bold text-[#2B2A5A]">Servicios Administrativos</h3>
+              <h3 class="font-heading text-[22px] font-bold text-azul">Administrativo</h3>
             </div>
-            <p class="font-['Open_Sans'] text-[15px] text-[#64748B] leading-relaxed mb-8">
-              Optimizamos los procesos internos de tu empresa para que puedas enfocarte en lo que realmente importa: hacer crecer tu negocio con bases s&oacute;lidas.
+            <p class="font-body text-[15px] text-gris leading-relaxed mb-8">
+              Acompa&ntilde;amiento estrat&eacute;gico para que tu empresa opere de forma eficiente.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">N&oacute;mina y seguridad social</span>
+                <span class="font-body text-[14px] text-azul font-medium">Asesor&iacute;a empresarial</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Costos y presupuestos</span>
+                <span class="font-body text-[14px] text-azul font-medium">Optimizaci&oacute;n de procesos</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Control de inventarios</span>
+                <span class="font-body text-[14px] text-azul font-medium">Constituci&oacute;n de empresas</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Flujo de efectivo</span>
+                <span class="font-body text-[14px] text-azul font-medium">Diagn&oacute;stico financiero</span>
               </div>
             </div>
-            <a href="#contacto" class="inline-flex items-center gap-2 font-[Montserrat] text-[14px] font-semibold text-[#4CAF7A] hover:text-[#3d9466] transition-colors">
+            <a href="#contacto" class="inline-flex items-center gap-2 font-heading text-[14px] font-semibold text-verde hover:text-[#3d9466] transition-colors">
               Solicitar informaci&oacute;n
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -229,7 +248,7 @@
 
         <!-- Panel 3: Alianzas -->
         <div data-panel="3" class="srv-panel hidden">
-          <div class="bg-white rounded-2xl border border-[#E2E8F0] p-8 lg:p-10">
+          <div class="bg-white rounded-2xl border border-border p-8 lg:p-10">
             <div class="flex items-center gap-4 mb-5">
               <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center bg-[#F3E8FF]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -240,30 +259,30 @@
                   <path d="M3 4h8"></path>
                 </svg>
               </div>
-              <h3 class="font-[Montserrat] text-[22px] font-bold text-[#2B2A5A]">Alianzas Estrat&eacute;gicas</h3>
+              <h3 class="font-heading text-[22px] font-bold text-azul">Alianzas</h3>
             </div>
-            <p class="font-['Open_Sans'] text-[15px] text-[#64748B] leading-relaxed mb-8">
-              Colaboramos con especialistas en diversas &aacute;reas para ofrecerte soluciones complementarias que fortalezcan cada aspecto de tu empresa.
+            <p class="font-body text-[15px] text-gris leading-relaxed mb-8">
+              Red de aliados especializados para cubrir todas las necesidades de tu negocio.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Asesor&iacute;a legal empresarial</span>
+                <span class="font-body text-[14px] text-azul font-medium">Asesor&iacute;a legal</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Seguros y fianzas</span>
+                <span class="font-body text-[14px] text-azul font-medium">Auditor&iacute;a externa</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Cr&eacute;ditos y financiamiento</span>
+                <span class="font-body text-[14px] text-azul font-medium">Tecnolog&iacute;as de la Informaci&oacute;n (TIC's)</span>
               </div>
               <div class="bg-[#F0FDF4] rounded-xl px-5 py-3.5 flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
-                <span class="font-['Open_Sans'] text-[14px] text-[#2B2A5A] font-medium">Tecnolog&iacute;a y sistemas</span>
+                <span class="font-body text-[14px] text-azul font-medium">Consultor&iacute;a en inversiones y seguros empresariales</span>
               </div>
             </div>
-            <a href="#contacto" class="inline-flex items-center gap-2 font-[Montserrat] text-[14px] font-semibold text-[#4CAF7A] hover:text-[#3d9466] transition-colors">
+            <a href="#contacto" class="inline-flex items-center gap-2 font-heading text-[14px] font-semibold text-verde hover:text-[#3d9466] transition-colors">
               Solicitar informaci&oacute;n
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>
@@ -273,6 +292,25 @@
     </div>
   </div>
 </section>
+
+<style>
+  /* Inactive states */
+  .srv-tab[data-tab="0"] .icon-wrapper { background-color: #EEF2FF; }
+  .srv-tab[data-tab="0"] .icon-svg { stroke: #352B73; }
+
+  .srv-tab[data-tab="1"] .icon-wrapper { background-color: #ECFDF5; }
+  .srv-tab[data-tab="1"] .icon-svg { stroke: #10B981; }
+
+  .srv-tab[data-tab="2"] .icon-wrapper { background-color: #FFFBEB; }
+  .srv-tab[data-tab="2"] .icon-svg { stroke: #F59E0B; }
+
+  .srv-tab[data-tab="3"] .icon-wrapper { background-color: #F3E8FF; }
+  .srv-tab[data-tab="3"] .icon-svg { stroke: #A855F7; }
+
+  /* Active states */
+  .srv-tab.srv-tab-active .icon-wrapper { background-color: rgba(255, 255, 255, 0.1) !important; }
+  .srv-tab.srv-tab-active .icon-svg { stroke: white !important; }
+</style>
 
 <script>
   const tabs = document.querySelectorAll('.srv-tab');
@@ -285,29 +323,38 @@
       // Reset all tabs
       tabs.forEach((t) => {
         t.classList.remove('srv-tab-active');
-        t.classList.remove('bg-[#2B2A5A]', 'border-[#2B2A5A]');
-        t.classList.add('bg-white', 'border-[#E2E8F0]');
+        t.classList.remove('bg-azul', 'border-azul');
+        t.classList.add('bg-white', 'border-border');
         const title = t.querySelector('h3');
         const desc = t.querySelector('p');
-        const iconBox = t.querySelector('div > div');
-        if (title) title.classList.replace('text-white', 'text-[#2B2A5A]');
+        const chevron = t.querySelector('.tab-chevron path');
+        const chevronSvg = t.querySelector('.tab-chevron');
+        
+        if (title) title.classList.replace('text-white', 'text-[#1F2937]');
         if (desc) {
           desc.classList.remove('text-white/70');
-          desc.classList.add('text-[#64748B]');
+          desc.classList.add('text-gris');
         }
+        if (chevron) chevron.setAttribute('d', 'm9 18 6-6-6-6');
+        if (chevronSvg) chevronSvg.classList.replace('text-white', 'text-[#6B7280]');
       });
 
       // Activate clicked tab
       tab.classList.add('srv-tab-active');
-      tab.classList.remove('bg-white', 'border-[#E2E8F0]');
-      tab.classList.add('bg-[#2B2A5A]', 'border-[#2B2A5A]');
+      tab.classList.remove('bg-white', 'border-border');
+      tab.classList.add('bg-azul', 'border-azul');
       const activeTitle = tab.querySelector('h3');
       const activeDesc = tab.querySelector('p');
-      if (activeTitle) activeTitle.classList.replace('text-[#2B2A5A]', 'text-white');
+      const activeChevron = tab.querySelector('.tab-chevron path');
+      const activeChevronSvg = tab.querySelector('.tab-chevron');
+
+      if (activeTitle) activeTitle.classList.replace('text-[#1F2937]', 'text-white');
       if (activeDesc) {
-        activeDesc.classList.remove('text-[#64748B]');
+        activeDesc.classList.remove('text-gris');
         activeDesc.classList.add('text-white/70');
       }
+      if (activeChevron) activeChevron.setAttribute('d', 'm6 9 6 6 6-6');
+      if (activeChevronSvg) activeChevronSvg.classList.replace('text-[#6B7280]', 'text-white');
 
       // Show corresponding panel
       panels.forEach((p) => p.classList.add('hidden'));

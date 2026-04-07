@@ -5,7 +5,9 @@ interface Props {
   title: string;
   description?: string;
 }
-const { title, description = "ITA Contadores - Tu aliado estratégico financiero. Contabilidad, asesoría fiscal y gestión administrativa para impulsar tu empresa." } = Astro.props;
+const { title, description = "ITA Contadores - Tu aliado estratégico financiero. Contabilidad, asesoría fiscal y gestión administrativa con +17 años de experiencia impulsando empresas en México." } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://itacontadores.com');
 ---
 <!doctype html>
 <html lang="es">
@@ -13,13 +15,139 @@ const { title, description = "ITA Contadores - Tu aliado estratégico financiero
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/favicon.png" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="ITA Contadores" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/images/logo.png" />
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="ITA Contadores" />
+    <meta name="theme-color" content="#2B2A5A" />
+
+    <!-- Google Fonts — single request, only weights actually used -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- Preload hero background image (LCP element) -->
+    <link rel="preload" href="/images/hero.webp" as="image" type="image/webp" />
+
+    <!-- Schema.org LocalBusiness -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "ITA Contadores",
+      "description": "Firma contable mexicana con +17 años de experiencia. Contabilidad, asesoría fiscal, gestión administrativa y alianzas estratégicas para impulsar tu empresa.",
+      "url": "https://itacontadores.com",
+      "logo": "https://itacontadores.com/images/logo.png",
+      "image": "https://itacontadores.com/images/logo.png",
+      "telephone": "+525550728828",
+      "email": "contacto@itacontadores.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hornillos #5, Col. Santa Cecilia",
+        "addressLocality": "Tlalnepantla",
+        "addressRegion": "Estado de México",
+        "postalCode": "54130",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 19.5346,
+        "longitude": -99.1977
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [],
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "México"
+      },
+      "foundingDate": "2009",
+      "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 5, "maxValue": 20 },
+      "knowsAbout": ["Contabilidad", "Asesoría fiscal", "Declaraciones fiscales", "Planeación tributaria", "Estados financieros", "Nóminas", "CFDI", "SAT"]
+    })} />
+
+    <!-- Umami Analytics (self-hosted) — descomentar cuando tengas tu instancia
+    <script defer src="https://UMAMI_URL/script.js" data-website-id="UMAMI_WEBSITE_ID"></script>
+    -->
+
     <title>{title}</title>
   </head>
-  <body class="bg-white">
+  <body class="bg-white overflow-x-hidden">
+    <!-- Mobile Splash Screen -->
+    <div id="mobile-splash-screen" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center lg:hidden transition-opacity duration-700 ease-in-out opacity-100">
+      <img 
+        src="/images/logo-opt.webp"
+        alt="ITA Contadores" 
+        class="w-[200px] h-auto object-contain animate-pulse" 
+      />
+    </div>
+
     <slot />
+
+    <script>
+      // Scroll reveal — activate only after paint to avoid CLS
+      requestAnimationFrame(() => {
+        document.body.classList.add("reveal-ready");
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+        document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+      });
+    </script>
+
+    <script>
+      // Execute splash screen logic immediately
+      document.addEventListener('DOMContentLoaded', () => {
+        const splash = document.getElementById('mobile-splash-screen');
+        if (splash) {
+          if (window.innerWidth < 1024) {
+            // Keep splash for 1.5 seconds on mobile, then fade out
+            setTimeout(() => {
+              splash.classList.remove('opacity-100');
+              splash.classList.add('opacity-0', 'pointer-events-none');
+              // Remove from DOM after transition completes
+              setTimeout(() => {
+                splash.remove();
+              }, 700);
+            }, 1500);
+          } else {
+            // Desktop bypasses splash screen to avoid conflict with Hero animation
+            splash.remove();
+          }
+        }
+      });
+    </script>
   </body>
 </html>
