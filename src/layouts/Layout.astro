@@ -44,10 +44,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://itaconta
     <meta name="author" content="ITA Contadores" />
     <meta name="theme-color" content="#2B2A5A" />
 
-    <!-- Google Fonts — single request, only weights actually used -->
+    <!-- Google Fonts — non-render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 
     <!-- Preload hero background image (LCP element) -->
     <link rel="preload" href="/images/hero.webp" as="image" type="image/webp" />
@@ -102,10 +103,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://itaconta
   <body class="bg-white overflow-x-hidden">
     <!-- Mobile Splash Screen -->
     <div id="mobile-splash-screen" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center lg:hidden transition-opacity duration-700 ease-in-out opacity-100">
-      <img 
+      <img
         src="/images/logo-opt.webp"
-        alt="ITA Contadores" 
-        class="w-[200px] h-auto object-contain animate-pulse" 
+        alt="ITA Contadores"
+        width="200"
+        height="200"
+        class="w-[200px] h-auto object-contain animate-pulse"
       />
     </div>
 

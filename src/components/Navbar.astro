@@ -15,12 +15,14 @@
       <a
         href="/#hero"
         id="navbar-logo-container"
-        class="shrink-0 flex items-center translate-y-[14px] max-lg:opacity-100 max-lg:max-w-[400px] lg:opacity-0 lg:max-w-0 overflow-hidden transition-all duration-1000 ease-in-out"
+        class="shrink-0 flex items-center translate-y-[14px] max-lg:opacity-100 lg:opacity-0 transition-opacity duration-1000 ease-in-out"
       >
         <img
           id="navbar-logo"
           src="/images/logo-navbar-blanco-opt.webp"
           alt="ITA Contadores"
+          width="280"
+          height="50"
           class="min-w-[200px] md:min-w-[240px] lg:min-w-[280px] w-[200px] md:w-[240px] lg:w-[280px] h-auto object-contain block"
         />
       </a>
@@ -253,7 +255,7 @@
   setTimeout(() => {
     const logoContainer = document.getElementById("navbar-logo-container");
     if (logoContainer) {
-      logoContainer.classList.remove("lg:opacity-0", "lg:max-w-0");
+      logoContainer.classList.remove("lg:opacity-0");
     }
   }, 1500);
 
