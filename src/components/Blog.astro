@@ -71,7 +71,7 @@ const articles = [
               <span class="text-gris-light text-[12px] font-body">{article.time} min de lectura</span>
             </div>
             <h3 class="text-azul text-[17px] font-heading font-bold leading-snug mb-2">{article.title}</h3>
-            <p class="text-gris text-[13px] font-body leading-relaxed mb-4 flex-1">{article.description}</p>
+            <p class="text-gris text-[13px] font-body leading-relaxed mb-4 flex-1 text-justify">{article.description}</p>
             <button data-blog={article.id} class="blog-open inline-flex items-center gap-1 text-verde text-[13px] font-heading font-semibold hover:underline transition-colors cursor-pointer bg-transparent border-none p-0">
               Leer m&aacute;s
               <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -116,7 +116,7 @@ const articles = [
 
         <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-5 mb-6">
           <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-2">⚠️ ¿Por qué debes cuidar tu facturación?</p>
-          <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">En 2026, el CFDI 4.0 es el eje de fiscalización del SAT. Cada factura es validada en tiempo real y cruzada con declaraciones, nómina y contabilidad. Un error puede provocar desde rechazo del CFDI hasta multas, pérdida de deducciones o auditorías.</p>
+          <p class="text-[14px] font-body text-[#4B5563] leading-relaxed text-justify">En 2026, el CFDI 4.0 es el eje de fiscalización del SAT. Cada factura es validada en tiempo real y cruzada con declaraciones, nómina y contabilidad. Un error puede provocar desde rechazo del CFDI hasta multas, pérdida de deducciones o auditorías.</p>
         </div>
 
         <div class="space-y-4">
@@ -127,7 +127,7 @@ const articles = [
               <li>Nombre o razón social sin coincidencia exacta</li>
               <li>Código postal incorrecto</li>
             </ul>
-            <p class="text-verde text-[14px] font-body mt-3">👉 Un solo error invalida la factura o impide su deducción.</p>
+            <p class="text-verde text-[14px] font-body mt-3 text-justify">👉 Un solo error invalida la factura o impide su deducción.</p>
           </div>
 
           <div class="border border-border rounded-xl p-5">
@@ -136,7 +136,7 @@ const articles = [
               <li>Elegir un uso que no corresponda al gasto real</li>
               <li>Usar claves genéricas de forma indebida</li>
             </ul>
-            <p class="text-verde text-[14px] font-body mt-3">👉 Puede invalidar deducciones o generar inconsistencias fiscales.</p>
+            <p class="text-verde text-[14px] font-body mt-3 text-justify">👉 Puede invalidar deducciones o generar inconsistencias fiscales.</p>
           </div>
 
           <div class="border border-border rounded-xl p-5">
@@ -145,7 +145,7 @@ const articles = [
               <li>Emisor o receptor con régimen que no coincide con la Constancia de Situación Fiscal</li>
               <li>No actualizar cambios de régimen ante el SAT</li>
             </ul>
-            <p class="text-verde text-[14px] font-body mt-3">👉 El SAT rechaza automáticamente el CFDI si hay inconsistencia.</p>
+            <p class="text-verde text-[14px] font-body mt-3 text-justify">👉 El SAT rechaza automáticamente el CFDI si hay inconsistencia.</p>
           </div>
 
           <div class="border border-border rounded-xl p-5">
@@ -154,7 +154,7 @@ const articles = [
               <li>Facturar como PUE cuando el pago es diferido</li>
               <li>Omitir el complemento de pago (REP)</li>
             </ul>
-            <p class="text-verde text-[14px] font-body mt-3">👉 Multas de $17,020 a $97,330 MXN por factura.</p>
+            <p class="text-verde text-[14px] font-body mt-3 text-justify">👉 Multas de $17,020 a $97,330 MXN por factura.</p>
           </div>
 
           <div class="border border-border rounded-xl p-5">
@@ -163,13 +163,13 @@ const articles = [
               <li>Cancelar facturas fuera del ejercicio fiscal</li>
               <li>No solicitar aceptación del receptor cuando es requerido</li>
             </ul>
-            <p class="text-verde text-[14px] font-body mt-3">👉 Multa del 5% al 10% del monto de la factura.</p>
+            <p class="text-verde text-[14px] font-body mt-3 text-justify">👉 Multa del 5% al 10% del monto de la factura.</p>
           </div>
         </div>
 
         <div class="bg-verde/10 border border-verde/20 rounded-xl p-6 mt-8">
           <p class="font-heading text-[16px] font-bold text-azul mb-2">¿Necesitas ayuda con tu facturación?</p>
-          <p class="text-gris text-[14px] mb-4">Nuestro equipo puede revisar tu situación fiscal y asegurarse de que todo esté en orden.</p>
+          <p class="text-gris text-[14px] mb-4 text-justify">Nuestro equipo puede revisar tu situación fiscal y asegurarse de que todo esté en orden.</p>
           <a href="#contacto" onclick="document.getElementById('blog-modal').classList.add('hidden'); document.body.style.overflow='';" class="inline-flex items-center gap-2 bg-verde text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-verde/90 transition-colors">
             Agenda una asesoría gratuita →
           </a>
@@ -184,7 +184,7 @@ const articles = [
 
         <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-5 mb-6">
           <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-2">⚠️ ¿Qué es la materialidad?</p>
-          <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">La materialidad se refiere a la capacidad de demostrar que una operación comercial realmente ocurrió. No basta con tener una factura; es necesario contar con evidencia de que el servicio se prestó o el producto se entregó.</p>
+          <p class="text-[14px] font-body text-[#4B5563] leading-relaxed text-justify">La materialidad se refiere a la capacidad de demostrar que una operación comercial realmente ocurrió. No basta con tener una factura; es necesario contar con evidencia de que el servicio se prestó o el producto se entregó.</p>
         </div>
 
         <div class="space-y-4">
@@ -219,13 +219,13 @@ const articles = [
               <li>Multas del 55% al 75% de contribuciones omitidas</li>
               <li>Inclusión en lista negra del SAT (Art. 69-B CFF)</li>
             </ul>
-            <p class="text-verde text-[14px] font-body mt-3">👉 La mejor defensa es la prevención: documenta cada operación desde el inicio.</p>
+            <p class="text-verde text-[14px] font-body mt-3 text-justify">👉 La mejor defensa es la prevención: documenta cada operación desde el inicio.</p>
           </div>
         </div>
 
         <div class="bg-verde/10 border border-verde/20 rounded-xl p-6 mt-8">
           <p class="font-heading text-[16px] font-bold text-azul mb-2">¿Tus operaciones están bien documentadas?</p>
-          <p class="text-gris text-[14px] mb-4">Podemos revisar tu situación y ayudarte a blindar tus deducciones fiscales.</p>
+          <p class="text-gris text-[14px] mb-4 text-justify">Podemos revisar tu situación y ayudarte a blindar tus deducciones fiscales.</p>
           <a href="#contacto" onclick="document.getElementById('blog-modal').classList.add('hidden'); document.body.style.overflow='';" class="inline-flex items-center gap-2 bg-verde text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-verde/90 transition-colors">
             Solicitar revisión fiscal →
           </a>
@@ -240,7 +240,7 @@ const articles = [
 
         <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-xl p-5 mb-6">
           <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-2">📊 ¿Por qué son importantes?</p>
-          <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">Los estados financieros son la radiografía de la salud de tu empresa. Son la herramienta más poderosa para tomar decisiones informadas, acceder a créditos y atraer inversionistas.</p>
+          <p class="text-[14px] font-body text-[#4B5563] leading-relaxed text-justify">Los estados financieros son la radiografía de la salud de tu empresa. Son la herramienta más poderosa para tomar decisiones informadas, acceder a créditos y atraer inversionistas.</p>
         </div>
 
         <div class="space-y-4">
@@ -256,12 +256,12 @@ const articles = [
 
           <div class="border border-border rounded-xl p-5">
             <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">🏦 Acceso a créditos</p>
-            <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">Los bancos exigen estados financieros actualizados para evaluar solicitudes de crédito. Sin ellos, tu empresa queda fuera de las mejores opciones de financiamiento.</p>
+            <p class="text-[14px] font-body text-[#4B5563] leading-relaxed text-justify">Los bancos exigen estados financieros actualizados para evaluar solicitudes de crédito. Sin ellos, tu empresa queda fuera de las mejores opciones de financiamiento.</p>
           </div>
 
           <div class="border border-border rounded-xl p-5">
             <p class="font-heading text-[15px] font-bold text-[#4B5563] mb-3">🎯 Toma de decisiones</p>
-            <p class="text-[14px] font-body text-[#4B5563] leading-relaxed">¿Deberías contratar más personal? ¿Es buen momento para invertir? ¿Tu margen de utilidad es saludable? Los estados financieros responden con datos reales, no con intuición.</p>
+            <p class="text-[14px] font-body text-[#4B5563] leading-relaxed text-justify">¿Deberías contratar más personal? ¿Es buen momento para invertir? ¿Tu margen de utilidad es saludable? Los estados financieros responden con datos reales, no con intuición.</p>
           </div>
 
           <div class="border border-border rounded-xl p-5">
@@ -272,13 +272,13 @@ const articles = [
               <li>Un banco te rechazó un crédito por falta de documentación</li>
               <li>Llevas más de 6 meses sin revisar tus números</li>
             </ul>
-            <p class="text-verde text-[14px] font-body mt-3">👉 Los estados financieros no son un gasto, son una inversión en claridad.</p>
+            <p class="text-verde text-[14px] font-body mt-3 text-justify">👉 Los estados financieros no son un gasto, son una inversión en claridad.</p>
           </div>
         </div>
 
         <div class="bg-verde/10 border border-verde/20 rounded-xl p-6 mt-8">
           <p class="font-heading text-[16px] font-bold text-azul mb-2">¿Necesitas estados financieros actualizados?</p>
-          <p class="text-gris text-[14px] mb-4">Podemos prepararlos rápidamente para que tengas claridad sobre tu empresa.</p>
+          <p class="text-gris text-[14px] mb-4 text-justify">Podemos prepararlos rápidamente para que tengas claridad sobre tu empresa.</p>
           <a href="#contacto" onclick="document.getElementById('blog-modal').classList.add('hidden'); document.body.style.overflow='';" class="inline-flex items-center gap-2 bg-verde text-white font-heading font-semibold text-[14px] rounded-xl px-6 py-3 hover:bg-verde/90 transition-colors">
             Solicitar cotización →
           </a>
