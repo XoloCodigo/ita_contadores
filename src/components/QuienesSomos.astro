@@ -2,95 +2,245 @@
 // QuienesSomos section - ITA Contadores
 ---
 
-<section id="quienes-somos" class="bg-bg py-15 px-6 md:px-16 lg:px-30">
+<section id="quienes-somos" class="bg-bg py-15 px-6 md:px-16 lg:px-30" aria-label="Quiénes somos">
   <div class="max-w-6xl mx-auto">
 
     <!-- Tab pills -->
-    <div class="flex flex-wrap gap-2 md:gap-3 pb-4" role="tablist">
+    <div class="flex flex-wrap gap-2 md:gap-3 pb-4 overflow-x-auto" role="tablist" aria-label="Información de la empresa">
       <button
         role="tab"
+        id="tab-quienes"
         aria-selected="true"
+        aria-controls="panel-quienes"
         data-tab="quienes"
-        class="tab-pill active rounded-full px-5 py-2.5 text-[14px] font-heading font-semibold border border-border cursor-pointer transition-colors bg-azul text-white"
+        tabindex="0"
+        class="tab-pill active rounded-full px-4 py-2 sm:px-5 sm:py-2.5 text-[13px] sm:text-[14px] font-heading font-semibold border border-border cursor-pointer transition-colors bg-azul text-white focus-visible:ring-2 focus-visible:ring-azul focus-visible:ring-offset-2 outline-none"
       >
         ¿Quiénes somos?
       </button>
       <button
         role="tab"
+        id="tab-mision"
         aria-selected="false"
+        aria-controls="panel-mision"
         data-tab="mision"
-        class="tab-pill rounded-full px-5 py-2.5 text-[14px] font-heading font-semibold border border-border cursor-pointer transition-colors bg-white text-gris"
+        tabindex="-1"
+        class="tab-pill rounded-full px-4 py-2 sm:px-5 sm:py-2.5 text-[13px] sm:text-[14px] font-heading font-semibold border border-border cursor-pointer transition-colors bg-white text-gris focus-visible:ring-2 focus-visible:ring-azul focus-visible:ring-offset-2 outline-none"
       >
         Misión
       </button>
       <button
         role="tab"
+        id="tab-vision"
         aria-selected="false"
+        aria-controls="panel-vision"
         data-tab="vision"
-        class="tab-pill rounded-full px-5 py-2.5 text-[14px] font-heading font-semibold border border-border cursor-pointer transition-colors bg-white text-gris"
+        tabindex="-1"
+        class="tab-pill rounded-full px-4 py-2 sm:px-5 sm:py-2.5 text-[13px] sm:text-[14px] font-heading font-semibold border border-border cursor-pointer transition-colors bg-white text-gris focus-visible:ring-2 focus-visible:ring-azul focus-visible:ring-offset-2 outline-none"
       >
         Visión
       </button>
       <button
         role="tab"
+        id="tab-valores"
         aria-selected="false"
+        aria-controls="panel-valores"
         data-tab="valores"
-        class="tab-pill rounded-full px-5 py-2.5 text-[14px] font-heading font-semibold border border-border cursor-pointer transition-colors bg-white text-gris"
+        tabindex="-1"
+        class="tab-pill rounded-full px-4 py-2 sm:px-5 sm:py-2.5 text-[13px] sm:text-[14px] font-heading font-semibold border border-border cursor-pointer transition-colors bg-white text-gris focus-visible:ring-2 focus-visible:ring-azul focus-visible:ring-offset-2 outline-none"
       >
         Valores
       </button>
     </div>
 
     <!-- Content card -->
-    <div class="bg-white border border-border rounded-2xl px-6 py-8 md:px-10 md:py-8 mt-2">
+    <div class="bg-white border border-border rounded-2xl px-6 py-8 md:px-10 md:py-10 mt-2">
 
       <!-- Quiénes somos -->
-      <div id="panel-quienes" class="tab-panel" role="tabpanel">
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4">
-          Somos una firma contable que transforma la contabilidad en una herramienta estrat&eacute;gica para el crecimiento empresarial. Nacimos apoyando a micronegocios y hoy acompa&ntilde;amos a empresas de todos los tama&ntilde;os en su desarrollo y consolidaci&oacute;n.
-        </p>
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4">
-          Ofrecemos servicios de contabilidad, asesor&iacute;a fiscal, facturaci&oacute;n y gesti&oacute;n administrativa con un enfoque claro, pr&aacute;ctico y personalizado. Nos respaldan alianzas en materia legal, auditor&iacute;a y Tecnolog&iacute;as de la Informaci&oacute;n (TIC's), que nos permiten brindar soluciones integrales y eficientes.
-        </p>
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4">
-          Nos distinguen nuestras 3 C's: confianza, compromiso y confidencialidad, as&iacute; como nuestros valores de integridad, responsabilidad y &eacute;tica profesional, que gu&iacute;an cada relaci&oacute;n y servicio.
-        </p>
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed">
-          M&aacute;s que cumplir obligaciones, en ITA Contadores te ayudamos a entender, ordenar y hacer crecer tu negocio.
-        </p>
+      <div id="panel-quienes" class="tab-panel" role="tabpanel" aria-labelledby="tab-quienes">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          <!-- Texto -->
+          <div class="flex-1">
+            <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4 text-justify">
+              Somos una firma contable que transforma la contabilidad en una herramienta estrat&eacute;gica para el crecimiento empresarial. Nacimos apoyando a micronegocios y hoy acompa&ntilde;amos a empresas de todos los tama&ntilde;os en su desarrollo y consolidaci&oacute;n.
+            </p>
+            <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4 text-justify">
+              Ofrecemos servicios de contabilidad, asesor&iacute;a fiscal, facturaci&oacute;n y gesti&oacute;n administrativa con un enfoque claro, pr&aacute;ctico y personalizado. Nos respaldan alianzas en materia legal, auditor&iacute;a y Tecnolog&iacute;as de la Informaci&oacute;n (TIC's), que nos permiten brindar soluciones integrales y eficientes.
+            </p>
+            <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4 text-justify">
+              Nos distinguen nuestras 3 C's: confianza, compromiso y confidencialidad, as&iacute; como nuestros valores de integridad, responsabilidad y &eacute;tica profesional, que gu&iacute;an cada relaci&oacute;n y servicio.
+            </p>
+            <p class="text-[15px] font-body text-[#4B5563] leading-relaxed text-justify">
+              M&aacute;s que cumplir obligaciones, en ITA Contadores te ayudamos a entender, ordenar y hacer crecer tu negocio.
+            </p>
+          </div>
+          <!-- Gráfico: Las 3 C's -->
+          <div class="w-full lg:w-72 shrink-0" aria-label="Nuestras 3 C's">
+            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-3 lg:gap-4">
+              <div class="flex items-center sm:flex-col gap-3 sm:gap-0 sm:text-center p-3 sm:p-4 rounded-xl bg-bg border border-border">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-verde/10 flex items-center justify-center sm:mb-2 shrink-0">
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6 text-verde" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                    <path d="M17 12a5 5 0 0 0-5-5"/>
+                    <path d="M12 12V7"/>
+                    <path d="M12 12l4 4"/>
+                  </svg>
+                </div>
+                <div class="sm:contents">
+                  <span class="text-[13px] font-heading font-bold text-azul">Confianza</span>
+                  <span class="text-[11px] font-body text-gris-light sm:mt-0.5 ml-auto sm:ml-0">Relaciones s&oacute;lidas</span>
+                </div>
+              </div>
+              <div class="flex items-center sm:flex-col gap-3 sm:gap-0 sm:text-center p-3 sm:p-4 rounded-xl bg-bg border border-border">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-verde/10 flex items-center justify-center sm:mb-2 shrink-0">
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6 text-verde" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </div>
+                <div class="sm:contents">
+                  <span class="text-[13px] font-heading font-bold text-azul">Compromiso</span>
+                  <span class="text-[11px] font-body text-gris-light sm:mt-0.5 ml-auto sm:ml-0">Resultados reales</span>
+                </div>
+              </div>
+              <div class="flex items-center sm:flex-col gap-3 sm:gap-0 sm:text-center p-3 sm:p-4 rounded-xl bg-bg border border-border">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-verde/10 flex items-center justify-center sm:mb-2 shrink-0">
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6 text-verde" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <div class="sm:contents">
+                  <span class="text-[13px] font-heading font-bold text-azul">Confidencialidad</span>
+                  <span class="text-[11px] font-body text-gris-light sm:mt-0.5 ml-auto sm:ml-0">Informaci&oacute;n protegida</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Misión -->
-      <div id="panel-mision" class="tab-panel hidden" role="tabpanel">
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4">
-          Transformamos la contabilidad en una herramienta estrat&eacute;gica que impulsa el crecimiento de las pymes, mediante soluciones estrat&eacute;gicas del &aacute;mbito contable, fiscal y financiero que aseguran cumplimiento, claridad y decisiones inteligentes.
-        </p>
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed">
-          Existimos para ordenar y potenciar negocios con un servicio cercano, profesional y basado en confianza, compromiso y confidencialidad.
-        </p>
+      <div id="panel-mision" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-mision">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+          <div class="flex-1">
+            <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4 text-justify">
+              Transformamos la contabilidad en una herramienta estrat&eacute;gica que impulsa el crecimiento de las pymes, mediante soluciones estrat&eacute;gicas del &aacute;mbito contable, fiscal y financiero que aseguran cumplimiento, claridad y decisiones inteligentes.
+            </p>
+            <p class="text-[15px] font-body text-[#4B5563] leading-relaxed text-justify">
+              Existimos para ordenar y potenciar negocios con un servicio cercano, profesional y basado en confianza, compromiso y confidencialidad.
+            </p>
+          </div>
+          <!-- Gráfico Misión -->
+          <div class="w-full sm:w-auto shrink-0 flex justify-center">
+            <div class="w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-full bg-linear-to-br from-azul to-azul-light flex items-center justify-center relative">
+              <svg class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+                <path d="M12 2v4"/>
+                <path d="M12 18v4"/>
+                <path d="M2 12h4"/>
+                <path d="M18 12h4"/>
+              </svg>
+              <div class="absolute -bottom-2 bg-verde text-white text-[10px] sm:text-[11px] font-heading font-bold px-3 py-1 rounded-full whitespace-nowrap">
+                NUESTRA MISIÓN
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Visión -->
-      <div id="panel-vision" class="tab-panel hidden" role="tabpanel">
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4">
-          Ser la firma contable l&iacute;der y la primera opci&oacute;n para pymes y empresas familiares en M&eacute;xico, reconocida por transformar la contabilidad en un motor estrat&eacute;gico de crecimiento empresarial.
-        </p>
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed">
-          Aspiramos a consolidarnos como aliados clave en la toma de decisiones, impulsando negocios m&aacute;s rentables, ordenados y sostenibles, y generando un impacto significativo en su desarrollo mediante soluciones de alto valor, sustentadas en nuestros valores corporativos.
-        </p>
+      <div id="panel-vision" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-vision">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+          <div class="flex-1">
+            <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4 text-justify">
+              Ser la firma contable l&iacute;der y la primera opci&oacute;n para pymes y empresas familiares en M&eacute;xico, reconocida por transformar la contabilidad en un motor estrat&eacute;gico de crecimiento empresarial.
+            </p>
+            <p class="text-[15px] font-body text-[#4B5563] leading-relaxed text-justify">
+              Aspiramos a consolidarnos como aliados clave en la toma de decisiones, impulsando negocios m&aacute;s rentables, ordenados y sostenibles, y generando un impacto significativo en su desarrollo mediante soluciones de alto valor, sustentadas en nuestros valores corporativos.
+            </p>
+          </div>
+          <!-- Gráfico Visión -->
+          <div class="w-full sm:w-auto shrink-0 flex justify-center">
+            <div class="w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-full bg-linear-to-br from-azul to-azul-light flex items-center justify-center relative">
+              <svg class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <div class="absolute -bottom-2 bg-verde text-white text-[10px] sm:text-[11px] font-heading font-bold px-3 py-1 rounded-full whitespace-nowrap">
+                NUESTRA VISIÓN
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Valores -->
-      <div id="panel-valores" class="tab-panel hidden" role="tabpanel">
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4">
-          En ITA Contadores actuamos con integridad y &eacute;tica profesional para construir relaciones de confianza.
-        </p>
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed mb-4">
-          Nos comprometemos con el crecimiento de cada cliente, protegiendo su informaci&oacute;n con absoluta confidencialidad y gestionando cada dato como un activo estrat&eacute;gico.
-        </p>
-        <p class="text-[15px] font-body text-[#4B5563] leading-relaxed">
-          Operamos con responsabilidad, excelencia y transparencia en cada servicio, porque m&aacute;s que n&uacute;meros, impulsamos decisiones que hacen crecer los negocios.
-        </p>
+      <div id="panel-valores" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-valores">
+        <div class="flex flex-col gap-6">
+          <p class="text-[15px] font-body text-[#4B5563] leading-relaxed text-justify">
+            En ITA Contadores actuamos con integridad y &eacute;tica profesional para construir relaciones de confianza. Nos comprometemos con el crecimiento de cada cliente, protegiendo su informaci&oacute;n con absoluta confidencialidad y gestionando cada dato como un activo estrat&eacute;gico.
+          </p>
+          <!-- Grid de valores -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+            <div class="flex items-center gap-3 p-4 rounded-xl bg-bg border border-border">
+              <div class="w-10 h-10 rounded-lg bg-azul/10 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-azul" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <span class="text-[13px] font-heading font-semibold text-azul">Integridad</span>
+            </div>
+            <div class="flex items-center gap-3 p-4 rounded-xl bg-bg border border-border">
+              <div class="w-10 h-10 rounded-lg bg-azul/10 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-azul" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </div>
+              <span class="text-[13px] font-heading font-semibold text-azul">Responsabilidad</span>
+            </div>
+            <div class="flex items-center gap-3 p-4 rounded-xl bg-bg border border-border">
+              <div class="w-10 h-10 rounded-lg bg-azul/10 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-azul" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <span class="text-[13px] font-heading font-semibold text-azul">&Eacute;tica profesional</span>
+            </div>
+            <div class="flex items-center gap-3 p-4 rounded-xl bg-bg border border-border">
+              <div class="w-10 h-10 rounded-lg bg-azul/10 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-azul" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/>
+                </svg>
+              </div>
+              <span class="text-[13px] font-heading font-semibold text-azul">Excelencia</span>
+            </div>
+            <div class="flex items-center gap-3 p-4 rounded-xl bg-bg border border-border">
+              <div class="w-10 h-10 rounded-lg bg-azul/10 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-azul" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <span class="text-[13px] font-heading font-semibold text-azul">Transparencia</span>
+            </div>
+            <div class="flex items-center gap-3 p-4 rounded-xl bg-bg border border-border">
+              <div class="w-10 h-10 rounded-lg bg-azul/10 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-azul" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <span class="text-[13px] font-heading font-semibold text-azul">Servicio cercano</span>
+            </div>
+          </div>
+          <p class="text-[15px] font-body text-[#4B5563] leading-relaxed text-justify">
+            Operamos con responsabilidad, excelencia y transparencia en cada servicio, porque m&aacute;s que n&uacute;meros, impulsamos decisiones que hacen crecer los negocios.
+          </p>
+        </div>
       </div>
 
     </div>
@@ -99,39 +249,62 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const pills = document.querySelectorAll('.tab-pill');
-    const panels = document.querySelectorAll('.tab-panel');
+    const tablist = document.querySelector('#quienes-somos [role="tablist"]');
+    const pills = document.querySelectorAll<HTMLButtonElement>('#quienes-somos .tab-pill');
+    const panels = document.querySelectorAll<HTMLElement>('#quienes-somos .tab-panel');
 
-    pills.forEach((pill) => {
-      pill.addEventListener('click', () => {
-        // Reset all pills
-        pills.forEach((p) => {
-          p.classList.remove('bg-azul', 'text-white');
-          p.classList.add('bg-white', 'text-gris');
-          p.setAttribute('aria-selected', 'false');
-        });
-
-        // Activate clicked pill
-        pill.classList.remove('bg-white', 'text-gris');
-        pill.classList.add('bg-azul', 'text-white');
-        pill.setAttribute('aria-selected', 'true');
-
-        // Hide all panels, show target
-        const target = pill.getAttribute('data-tab');
-        panels.forEach((panel) => panel.classList.add('hidden'));
-        document.getElementById(`panel-${target}`)?.classList.remove('hidden');
+    function activateTab(pill: HTMLButtonElement) {
+      // Reset all pills
+      pills.forEach((p) => {
+        p.classList.remove('bg-azul', 'text-white');
+        p.classList.add('bg-white', 'text-gris');
+        p.setAttribute('aria-selected', 'false');
+        p.setAttribute('tabindex', '-1');
       });
+
+      // Activate clicked pill
+      pill.classList.remove('bg-white', 'text-gris');
+      pill.classList.add('bg-azul', 'text-white');
+      pill.setAttribute('aria-selected', 'true');
+      pill.setAttribute('tabindex', '0');
+      pill.focus();
+
+      // Hide all panels, show target
+      const target = pill.getAttribute('data-tab');
+      panels.forEach((panel) => panel.classList.add('hidden'));
+      document.getElementById(`panel-${target}`)?.classList.remove('hidden');
+    }
+
+    // Click handler
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => activateTab(pill));
+    });
+
+    // Keyboard navigation (Arrow keys + Home/End)
+    tablist?.addEventListener('keydown', (e: Event) => {
+      const event = e as KeyboardEvent;
+      const currentIndex = Array.from(pills).findIndex(
+        (p) => p.getAttribute('aria-selected') === 'true'
+      );
+      let newIndex = currentIndex;
+
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        newIndex = (currentIndex + 1) % pills.length;
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        newIndex = (currentIndex - 1 + pills.length) % pills.length;
+      } else if (event.key === 'Home') {
+        event.preventDefault();
+        newIndex = 0;
+      } else if (event.key === 'End') {
+        event.preventDefault();
+        newIndex = pills.length - 1;
+      }
+
+      if (newIndex !== currentIndex) {
+        activateTab(pills[newIndex]);
+      }
     });
   });
 </script>
-
-<style>
-  /* Hide scrollbar for tab pills on mobile */
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>
