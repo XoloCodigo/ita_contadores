@@ -28,7 +28,7 @@ const cards = [
   class="w-full py-16 md:py-[80px] px-6 md:px-16 lg:px-[120px] bg-linear-to-br from-azul to-azul-light"
 >
   <div class="max-w-[1440px] mx-auto">
-    <!-- Header -->
+    {/* Header */}
     <div class="text-center mb-14">
       <span
         class="inline-block font-heading text-[12px] font-semibold text-verde tracking-widest uppercase mb-3"
@@ -45,11 +45,11 @@ const cards = [
       </p>
     </div>
 
-    <!-- Cards Grid -->
+    {/* Cards Grid */}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       {cards.map((card) => (
         <div class="flex flex-row md:flex-col items-center md:items-center text-left md:text-center gap-5 md:gap-0">
-          <!-- Icon Box -->
+          {/* Icon Box */}
           <div class="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-2xl bg-white/10 flex items-center justify-center shrink-0 mb-0 md:mb-5">
             {card.icon === "award" && (
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-verde">
@@ -78,12 +78,12 @@ const cards = [
           </div>
 
           <div class="flex-1">
-            <!-- Title -->
+            {/* Title */}
             <h3 class="font-heading text-[15px] md:text-[16px] font-bold text-white mb-1 md:mb-2 leading-snug">
               {card.title}
             </h3>
 
-            <!-- Description -->
+            {/* Description */}
             <p class="font-body text-[13px] text-white/60 leading-relaxed max-w-[260px] md:mx-auto">
               {card.desc}
             </p>

@@ -18,46 +18,46 @@ const ogImage = new URL('/images/og-image.png', siteBase).href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
 
-    <!-- Canonical URL -->
+    {/* Canonical URL */}
     <link rel="canonical" href={canonicalURL.href} />
 
-    <!-- Favicon -->
+    {/* Favicon */}
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="apple-touch-icon" href="/images/favicon.png" />
 
-    <!-- Open Graph / Social -->
+    {/* Open Graph / Social */}
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="{ogImage}" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="es_MX" />
     <meta property="og:site_name" content="ITA Contadores" />
 
-    <!-- Twitter Card -->
+    {/* Twitter Card */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="{ogImage}" />
+    <meta name="twitter:image" content={ogImage} />
 
-    <!-- Additional SEO -->
+    {/* Additional SEO */}
     <meta name="robots" content="index, follow" />
     <meta name="author" content="ITA Contadores" />
     <meta name="theme-color" content="#2B2A5A" />
 
-    <!-- Preload hero background image (LCP element) — highest priority, before fonts -->
+    {/* Preload hero background image (LCP element) — highest priority, before fonts */}
     <link rel="preload" href="/images/hero.webp" as="image" type="image/webp" fetchpriority="high" />
 
-    <!-- Google Fonts — non-render-blocking -->
+    {/* Google Fonts — non-render-blocking */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 
-    <!-- Schema.org LocalBusiness -->
+    {/* Schema.org LocalBusiness */}
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "AccountingService",
@@ -98,14 +98,13 @@ const ogImage = new URL('/images/og-image.png', siteBase).href;
       "knowsAbout": ["Contabilidad", "Asesoría fiscal", "Declaraciones fiscales", "Planeación tributaria", "Estados financieros", "Nóminas", "CFDI", "SAT"]
     })} />
 
-    <!-- Umami Analytics (self-hosted) — descomentar cuando tengas tu instancia
-    <script defer src="https://UMAMI_URL/script.js" data-website-id="UMAMI_WEBSITE_ID"></script>
-    -->
+    {/* Umami Analytics — activar cuando se tenga la cuenta */}
+    {/* <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="TU_ID_AQUI"></script> */}
 
     <title>{title}</title>
   </head>
   <body class="bg-white overflow-x-hidden">
-    <!-- Mobile Splash Screen -->
+    {/* Mobile Splash Screen */}
     <div id="mobile-splash-screen" class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center lg:hidden transition-opacity duration-700 ease-in-out opacity-100">
       <img
         src="/images/logo-opt.webp"

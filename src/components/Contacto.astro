@@ -5,7 +5,7 @@
 <section id="contacto" class="reveal w-full bg-white py-16 md:py-[80px] px-6 md:px-16 lg:px-[80px]">
   <div class="max-w-[1440px] mx-auto">
 
-    <!-- Header centered -->
+    {/* Header centered */}
     <div class="text-center mb-14">
       <span
         class="inline-block font-heading text-[12px] font-semibold text-verde tracking-widest uppercase mb-3"
@@ -22,18 +22,18 @@
       </p>
     </div>
 
-    <!-- Two columns -->
+    {/* Two columns */}
     <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
 
-      <!-- Left: Info -->
+      {/* Left: Info */}
       <div class="flex-1 lg:max-w-[420px]">
         <h3 class="font-heading text-[18px] font-bold text-azul mb-6">
           Informaci&oacute;n de contacto
         </h3>
 
-        <!-- Info items -->
+        {/* Info items */}
         <div class="flex flex-col gap-5 mb-8">
-          <!-- Phone -->
+          {/* Phone */}
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-full bg-[#F0FDF4] flex items-center justify-center shrink-0">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -46,7 +46,7 @@
             </div>
           </div>
 
-          <!-- Mail -->
+          {/* Mail */}
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-full bg-[#F0FDF4] flex items-center justify-center shrink-0">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -60,7 +60,7 @@
             </div>
           </div>
 
-          <!-- Location -->
+          {/* Location */}
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-full bg-[#F0FDF4] flex items-center justify-center shrink-0">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4CAF7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -75,7 +75,7 @@
           </div>
         </div>
 
-        <!-- WhatsApp box -->
+        {/* WhatsApp box */}
         <a
           href="https://wa.me/5550728828"
           target="_blank"
@@ -91,7 +91,7 @@
           </div>
         </a>
 
-        <!-- Diagnostico box -->
+        {/* Diagnostico box */}
         <div class="bg-verde/10 border border-verde/20 rounded-xl px-6 py-4">
           <div class="flex items-start gap-3">
             <span class="text-lg">&#128269;</span>
@@ -104,7 +104,7 @@
           </div>
         </div>
 
-        <!-- Map -->
+        {/* Map */}
         <div class="mt-6 rounded-xl overflow-hidden border border-border h-[180px]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.8!2d-99.1977!3d19.5346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8a0a0a0a0a0%3A0x0!2sHornillos%205%2C%20Santa%20Cecilia%2C%20Tlalnepantla!5e0!3m2!1ses!2smx!4v1"
@@ -119,11 +119,11 @@
         </div>
       </div>
 
-      <!-- Right: Form -->
+      {/* Right: Form */}
       <div class="flex-1">
         <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white border border-border rounded-2xl p-6 md:p-8">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-            <!-- Nombre -->
+            {/* Nombre */}
             <div class="flex flex-col gap-1.5">
               <label for="nombre" class="text-azul text-[14px] font-semibold font-heading">Nombre <span class="text-red-500">*</span></label>
               <input
@@ -136,7 +136,7 @@
               />
             </div>
 
-            <!-- Correo -->
+            {/* Correo */}
             <div class="flex flex-col gap-1.5">
               <label for="correo" class="text-azul text-[14px] font-semibold font-heading">Correo electr&oacute;nico <span class="text-red-500">*</span></label>
               <input
@@ -150,7 +150,7 @@
             </div>
           </div>
 
-          <!-- Teléfono -->
+          {/* Teléfono */}
           <div class="flex flex-col gap-1.5 mb-4">
             <label for="telefono" class="text-azul text-[14px] font-semibold font-heading">Tel&eacute;fono</label>
             <input
@@ -162,7 +162,7 @@
             />
           </div>
 
-          <!-- Mensaje -->
+          {/* Mensaje */}
           <div class="flex flex-col gap-1.5 mb-6">
             <label for="mensaje" class="text-azul text-[14px] font-semibold font-heading">Mensaje <span class="text-red-500">*</span></label>
             <textarea
@@ -175,7 +175,7 @@
             ></textarea>
           </div>
 
-          <!-- Submit -->
+          {/* Submit */}
           <button
             type="submit"
             class="w-full bg-azul hover:bg-azul-light text-white font-heading font-semibold text-[15px] py-4 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-verde focus-visible:ring-offset-2"
@@ -187,19 +187,19 @@
             </svg>
           </button>
 
-          <!-- Success message -->
+          {/* Success message */}
           <div id="form-success" class="hidden bg-verde/10 border border-verde/20 rounded-xl p-4 text-center">
             <p class="text-verde font-heading font-bold text-[15px] mb-1">&#10003; Mensaje enviado</p>
             <p class="text-gris text-[13px] font-body">Nos pondremos en contacto contigo pronto.</p>
           </div>
 
-          <!-- Error message -->
+          {/* Error message */}
           <div id="form-error" class="hidden bg-red-50 border border-red-200 rounded-xl p-4 text-center">
             <p class="text-red-600 font-heading font-bold text-[15px] mb-1">Error al enviar</p>
             <p class="text-gris text-[13px] font-body">Int&eacute;ntalo de nuevo o cont&aacute;ctanos por WhatsApp.</p>
           </div>
 
-          <!-- Disclaimer -->
+          {/* Disclaimer */}
           <p class="text-gris-light text-[12px] font-body text-center mt-4">
             Al enviar, aceptas que nos contactemos contigo para brindarte informaci&oacute;n.
           </p>

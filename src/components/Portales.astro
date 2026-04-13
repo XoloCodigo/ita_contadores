@@ -78,7 +78,7 @@ const portals = [
 
 <section class="w-full bg-white py-16 md:py-[80px] px-6 md:px-16 lg:px-[80px]">
   <div class="max-w-[1440px] mx-auto">
-    <!-- Header -->
+    {/* Header */}
     <div class="text-center mb-14">
       <span
         class="inline-block font-heading text-[12px] font-semibold text-verde tracking-widest uppercase mb-3"
@@ -95,7 +95,7 @@ const portals = [
       </p>
     </div>
 
-    <!-- Grid -->
+    {/* Grid */}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="portals-grid">
       {portals.map((p, index) => (
         <a
@@ -104,7 +104,7 @@ const portals = [
           rel="noopener noreferrer"
           class={`portal-card group block bg-bg border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:border-[#CBD5E1] hover:-translate-y-1 ${index >= 4 ? 'hidden md:block' : ''}`}
         >
-          <!-- Top row: icon + external link -->
+          {/* Top row: icon + external link */}
           <div class="flex items-center justify-between mb-4">
             <div
               class="w-12 h-12 rounded-lg flex items-center justify-center"
@@ -127,7 +127,7 @@ const portals = [
             </svg>
           </div>
 
-          <!-- Name badge -->
+          {/* Name badge */}
           <span
             class="inline-block text-[13px] font-semibold font-heading rounded-md px-3 py-1 mb-3"
             style={`background: ${p.bg}; color: ${p.color};`}
@@ -135,12 +135,12 @@ const portals = [
             {p.name}
           </span>
 
-          <!-- Description -->
+          {/* Description */}
           <p class="text-[#475569] text-[13px] leading-relaxed mb-3">
             {p.desc}
           </p>
 
-          <!-- URL -->
+          {/* URL */}
           <span class="text-gris-light text-[12px] font-medium truncate block max-w-full">
             {p.url}
           </span>
@@ -148,7 +148,7 @@ const portals = [
       ))}
     </div>
 
-    <!-- Mostrar más (Mobile only) -->
+    {/* Mostrar más (Mobile only) */}
     <div class="mt-8 text-center md:hidden" id="show-more-container">
       <button id="show-more-btn" class="inline-flex items-center gap-2 bg-white border border-border text-azul font-heading font-semibold text-[14px] px-6 py-3 rounded-full hover:bg-bg transition-colors cursor-pointer">
         <span id="show-more-text">Mostrar más portales</span>

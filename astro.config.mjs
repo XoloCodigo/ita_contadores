@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://itacontadores.netlify.app',
+  site: 'https://itacontadores.com',
   output: 'static',
   integrations: [sitemap()],
   compressHTML: true,
